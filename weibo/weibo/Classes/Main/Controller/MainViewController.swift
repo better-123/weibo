@@ -11,8 +11,10 @@ import UIKit
 class MainViewController: UITabBarController {
     
     //发布按钮
-    private lazy var relaeseBtn : UIButton = UIButton()
-
+    //类方法创建按钮
+//    private lazy var relaeseBtn : UIButton = UIButton.createButton(imageName: "icon0")
+    //便利构造函数创建按钮
+    private lazy var relaeseBtn : UIButton = UIButton(imageName: "icon0")
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -125,9 +127,11 @@ extension MainViewController {
     func configurReleaseBtn() {
         //将发布按钮添加到TabBar上
         tabBar.addSubview(relaeseBtn)
+        /*
         relaeseBtn.setImage(UIImage(named: "icon0-1"), for: .normal)
         relaeseBtn.setImage(UIImage(named: "icon0-2"), for: .highlighted)
         relaeseBtn.sizeToFit()
+         */
         //设置发布按钮位置
         relaeseBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.bounds.size.height*0.5)
         
