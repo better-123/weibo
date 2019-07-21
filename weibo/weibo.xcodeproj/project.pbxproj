@@ -17,6 +17,11 @@
 		D2CD848F22E49951009783E5 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CD848E22E49951009783E5 /* DiscoverTableViewController.swift */; };
 		D2CD849122E4995F009783E5 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CD849022E4995F009783E5 /* ProfileTableViewController.swift */; };
 		D2CD849522E49A19009783E5 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = D2CD849422E49A19009783E5 /* main.json */; };
+		D2CD84A522E4B1CD009783E5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2CD84A322E4B1CD009783E5 /* Home.storyboard */; };
+		D2CD84A722E4B1EA009783E5 /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2CD84A622E4B1EA009783E5 /* Message.storyboard */; };
+		D2CD84AA22E4B1FE009783E5 /* Release.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2CD84A822E4B1FE009783E5 /* Release.storyboard */; };
+		D2CD84AC22E4B216009783E5 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2CD84AB22E4B216009783E5 /* Discover.storyboard */; };
+		D2CD84AF22E4B22A009783E5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2CD84AD22E4B22A009783E5 /* Profile.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		D2CD848E22E49951009783E5 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		D2CD849022E4995F009783E5 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		D2CD849422E49A19009783E5 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		D2CD84A422E4B1CD009783E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weibo/Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		D2CD84A622E4B1EA009783E5 /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
+		D2CD84A922E4B1FE009783E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weibo/Base.lproj/Release.storyboard; sourceTree = "<group>"; };
+		D2CD84AB22E4B216009783E5 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		D2CD84AE22E4B22A009783E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weibo/Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +75,9 @@
 			isa = PBXGroup;
 			children = (
 				D2CD846522E459AA009783E5 /* Classes */,
+				D2CD84B022E4B2BC009783E5 /* Tools */,
 				D2CD845222E45500009783E5 /* AppDelegate.swift */,
-				D2CD845622E45500009783E5 /* Main.storyboard */,
+				D2CD84A822E4B1FE009783E5 /* Release.storyboard */,
 				D2CD845922E45500009783E5 /* Assets.xcassets */,
 				D2CD845B22E45500009783E5 /* LaunchScreen.storyboard */,
 				D2CD849422E49A19009783E5 /* main.json */,
@@ -90,6 +101,7 @@
 		D2CD846622E459AA009783E5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D2CD84A322E4B1CD009783E5 /* Home.storyboard */,
 				D2CD846722E459AA009783E5 /* Controller */,
 				D2CD846822E459AA009783E5 /* Model */,
 				D2CD846922E459AA009783E5 /* View */,
@@ -122,6 +134,7 @@
 		D2CD846A22E459AA009783E5 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				D2CD84AB22E4B216009783E5 /* Discover.storyboard */,
 				D2CD846B22E459AA009783E5 /* Controller */,
 				D2CD846C22E459AA009783E5 /* Model */,
 				D2CD846D22E459AA009783E5 /* View */,
@@ -154,6 +167,7 @@
 		D2CD846E22E459AA009783E5 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				D2CD84A622E4B1EA009783E5 /* Message.storyboard */,
 				D2CD846F22E459AA009783E5 /* Controller */,
 				D2CD847022E459AA009783E5 /* Model */,
 				D2CD847122E459AA009783E5 /* View */,
@@ -186,6 +200,7 @@
 		D2CD847222E459AA009783E5 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				D2CD84AD22E4B22A009783E5 /* Profile.storyboard */,
 				D2CD847322E459AA009783E5 /* Controller */,
 				D2CD847422E459AA009783E5 /* Model */,
 				D2CD847522E459AA009783E5 /* View */,
@@ -218,6 +233,7 @@
 		D2CD847622E459AA009783E5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D2CD845622E45500009783E5 /* Main.storyboard */,
 				D2CD847722E459AA009783E5 /* Controller */,
 				D2CD847822E459AA009783E5 /* Model */,
 				D2CD847922E459AA009783E5 /* View */,
@@ -246,6 +262,14 @@
 			);
 			path = View;
 			sourceTree = "<group>";
+		};
+		D2CD84B022E4B2BC009783E5 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tools;
+			path = weibo/Tools;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -306,9 +330,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2CD845D22E45500009783E5 /* LaunchScreen.storyboard in Resources */,
+				D2CD84AC22E4B216009783E5 /* Discover.storyboard in Resources */,
+				D2CD84A522E4B1CD009783E5 /* Home.storyboard in Resources */,
 				D2CD845A22E45500009783E5 /* Assets.xcassets in Resources */,
 				D2CD849522E49A19009783E5 /* main.json in Resources */,
+				D2CD84A722E4B1EA009783E5 /* Message.storyboard in Resources */,
+				D2CD84AF22E4B22A009783E5 /* Profile.storyboard in Resources */,
 				D2CD845822E45500009783E5 /* Main.storyboard in Resources */,
+				D2CD84AA22E4B1FE009783E5 /* Release.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +374,30 @@
 				D2CD845C22E45500009783E5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D2CD84A322E4B1CD009783E5 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2CD84A422E4B1CD009783E5 /* Base */,
+			);
+			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
+		D2CD84A822E4B1FE009783E5 /* Release.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2CD84A922E4B1FE009783E5 /* Base */,
+			);
+			name = Release.storyboard;
+			sourceTree = "<group>";
+		};
+		D2CD84AD22E4B22A009783E5 /* Profile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2CD84AE22E4B22A009783E5 /* Base */,
+			);
+			name = Profile.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

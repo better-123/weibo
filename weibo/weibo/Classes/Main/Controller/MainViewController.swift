@@ -9,10 +9,15 @@
 import UIKit
 
 class MainViewController: UITabBarController {
+    
+    //发布按钮
+    private lazy var relaeseBtn : UIButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //纯代码初始化项目方法
+        /*
         //方式三:通过json文件方式初始化项目
         //获取json路径
         guard let jsonPath = Bundle.main.path(forResource: "main.json", ofType: nil) else {
@@ -70,11 +75,15 @@ class MainViewController: UITabBarController {
 //        //我的
 //        addChildViewControlle(chlidVc: "ProfileTableViewController", title: "我的", tabImage: "icon2-1", tabSelImage: "icon2-2", navTitle: "我的")
         
+      */
         
+        //设置发布按钮
+        configurReleaseBtn()
     }
     
     //方法重载:方法名相同,参数不同
     //private:在当前文件中可用,其他文件不能访问
+    /*
     private func addChildViewControlle(chlidVc:String,title:String,tabImage:String,tabSelImage:String,navTitle:String) {
         
         //获取命名空间
@@ -106,8 +115,22 @@ class MainViewController: UITabBarController {
         addChild(chlidNav)
         
     }
-    
+    */
 
-    
 
+}
+//mark - 设置UI界面
+extension MainViewController {
+    //设置发布安妮
+    func configurReleaseBtn() {
+        //将发布按钮添加到TabBar上
+        tabBar.addSubview(relaeseBtn)
+        relaeseBtn.setImage(UIImage(named: "icon0-1"), for: .normal)
+        relaeseBtn.setImage(UIImage(named: "icon0-2"), for: .highlighted)
+        relaeseBtn.sizeToFit()
+        //设置发布按钮位置
+        relaeseBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.bounds.size.height*0.5)
+        
+    }
+    
 }
