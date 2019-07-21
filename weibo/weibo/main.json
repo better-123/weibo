@@ -1,0 +1,31 @@
+[
+    {
+        "viewName":"HomeTableViewController",
+        "title":"首页",
+        "tabImage":"icon0-1",
+        "tabSelImage":"icon0-2",
+        "navTitle":"首页"
+    },
+    {
+        "viewName":"MessageTableViewController",
+        "title":"消息",
+        "tabImage":"icon1-1",
+        "tabSelImage":"icon1-2",
+        "navTitle":"消息"
+    },
+    {
+        "viewName":"DiscoverTableViewController",
+        "title":"发现",
+        "tabImage":"icon1-1",
+        "tabSelImage":"icon1-2",
+        "navTitle":"发现"
+    },
+    {
+        "viewName":"ProfileTableViewController",
+        "title":"我的",
+        "tabImage":"icon2-1",
+        "tabSelImage":"icon2-2",
+        "navTitle":"我的"
+    }
+
+]
