@@ -13,7 +13,7 @@ class BaseTableViewController: UITableViewController {
     ///访客视图
     lazy var visitorView : VisitorView = VisitorView.visitorView()
     ///是否登录
-    var isLogin : Bool = false
+    var isLogin : Bool = true
     
     ///加载视图
     override func loadView() {

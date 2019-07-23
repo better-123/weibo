@@ -26,6 +26,8 @@
 		D2E72EEB22E6EE060062C7BD /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E72EEA22E6EE060062C7BD /* BaseTableViewController.swift */; };
 		D2E72EED22E6F05D0062C7BD /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E72EEC22E6F05D0062C7BD /* VisitorView.swift */; };
 		D2E72EEF22E6F0AA0062C7BD /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E72EEE22E6F0AA0062C7BD /* VisitorView.xib */; };
+		D2E72EF122E70E9C0062C7BD /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E72EF022E70E9C0062C7BD /* UIBarButtonItem-Extension.swift */; };
+		D2E72EF322E713F10062C7BD /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E72EF222E713F10062C7BD /* TitleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		D2E72EEA22E6EE060062C7BD /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		D2E72EEC22E6F05D0062C7BD /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		D2E72EEE22E6F0AA0062C7BD /* VisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
+		D2E72EF022E70E9C0062C7BD /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		D2E72EF222E713F10062C7BD /* TitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +289,8 @@
 			isa = PBXGroup;
 			children = (
 				D2CD84B222E4BA64009783E5 /* UIButton-Extension.swift */,
+				D2E72EF022E70E9C0062C7BD /* UIBarButtonItem-Extension.swift */,
+				D2E72EF222E713F10062C7BD /* TitleButton.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -401,9 +407,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2E72EF122E70E9C0062C7BD /* UIBarButtonItem-Extension.swift in Sources */,
 				D2CD849122E4995F009783E5 /* ProfileTableViewController.swift in Sources */,
 				D2CD84B322E4BA64009783E5 /* UIButton-Extension.swift in Sources */,
 				D2E72EEB22E6EE060062C7BD /* BaseTableViewController.swift in Sources */,
+				D2E72EF322E713F10062C7BD /* TitleButton.swift in Sources */,
 				D2CD848B22E4992F009783E5 /* HomeTableViewController.swift in Sources */,
 				D2CD845322E45500009783E5 /* AppDelegate.swift in Sources */,
 				D2CD848D22E49943009783E5 /* MessageTableViewController.swift in Sources */,
