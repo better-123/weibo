@@ -14,7 +14,7 @@ class MainViewController: UITabBarController {
     //类方法创建按钮
 //    private lazy var relaeseBtn : UIButton = UIButton.createButton(imageName: "icon0")
     //便利构造函数创建按钮
-    private lazy var relaeseBtn : UIButton = UIButton(imageName: "icon0")
+    private lazy var releaseBtn : UIButton = UIButton(imageName: "icon0")
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -121,20 +121,30 @@ class MainViewController: UITabBarController {
 
 
 }
-//mark - 设置UI界面
+//MARK: - 设置UI界面
 extension MainViewController {
     //设置发布安妮
     func configurReleaseBtn() {
         //将发布按钮添加到TabBar上
-        tabBar.addSubview(relaeseBtn)
+        tabBar.addSubview(releaseBtn)
         /*
         relaeseBtn.setImage(UIImage(named: "icon0-1"), for: .normal)
         relaeseBtn.setImage(UIImage(named: "icon0-2"), for: .highlighted)
         relaeseBtn.sizeToFit()
          */
         //设置发布按钮位置
-        relaeseBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.bounds.size.height*0.5)
-        
+        releaseBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.bounds.size.height*0.5)
+        //监听发布按钮的点击
+        //Selector():两种写法,1>Selector("方法的名字"),2>直接“方法的名字”
+        releaseBtn.addTarget(self, action: #selector(MainViewController.releaseBtnClick), for: .touchUpInside)
     }
     
+}
+//MARK: - 事件监听
+extension MainViewController {
+    //事件监听本质是发送消息,但是发送消息是OC特性(OC中:将方法包装成@SEL类型->去类中查找方法列表->根据@SEL找到imp函数指针->执行调用这个函数)
+    //swift:如果在swift中将函数声明成private,那么函数不会被添加到方法列表中,使用@SEL方法去监听函数,程序就会报错,要想解决这个问题,要么去掉private,要么在private前面加上@objc
+    @objc private func releaseBtnClick() {
+        print("releaseClick")
+    }
 }

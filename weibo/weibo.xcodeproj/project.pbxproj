@@ -23,6 +23,9 @@
 		D2CD84AC22E4B216009783E5 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2CD84AB22E4B216009783E5 /* Discover.storyboard */; };
 		D2CD84AF22E4B22A009783E5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2CD84AD22E4B22A009783E5 /* Profile.storyboard */; };
 		D2CD84B322E4BA64009783E5 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CD84B222E4BA64009783E5 /* UIButton-Extension.swift */; };
+		D2E72EEB22E6EE060062C7BD /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E72EEA22E6EE060062C7BD /* BaseTableViewController.swift */; };
+		D2E72EED22E6F05D0062C7BD /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E72EEC22E6F05D0062C7BD /* VisitorView.swift */; };
+		D2E72EEF22E6F0AA0062C7BD /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E72EEE22E6F0AA0062C7BD /* VisitorView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		D2CD84AB22E4B216009783E5 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		D2CD84AE22E4B22A009783E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weibo/Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		D2CD84B222E4BA64009783E5 /* UIButton-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
+		D2E72EEA22E6EE060062C7BD /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		D2E72EEC22E6F05D0062C7BD /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		D2E72EEE22E6F0AA0062C7BD /* VisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,7 @@
 		D2CD846522E459AA009783E5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D2E72EE622E6ED5C0062C7BD /* Visitor */,
 				D2CD847622E459AA009783E5 /* Main */,
 				D2CD846622E459AA009783E5 /* Home */,
 				D2CD846E22E459AA009783E5 /* Message */,
@@ -282,6 +289,40 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		D2E72EE622E6ED5C0062C7BD /* Visitor */ = {
+			isa = PBXGroup;
+			children = (
+				D2E72EE722E6ED7C0062C7BD /* Controller */,
+				D2E72EE822E6ED8C0062C7BD /* View */,
+				D2E72EE922E6ED980062C7BD /* Model */,
+			);
+			path = Visitor;
+			sourceTree = "<group>";
+		};
+		D2E72EE722E6ED7C0062C7BD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D2E72EEA22E6EE060062C7BD /* BaseTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D2E72EE822E6ED8C0062C7BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D2E72EEC22E6F05D0062C7BD /* VisitorView.swift */,
+				D2E72EEE22E6F0AA0062C7BD /* VisitorView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D2E72EE922E6ED980062C7BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -341,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2CD845D22E45500009783E5 /* LaunchScreen.storyboard in Resources */,
+				D2E72EEF22E6F0AA0062C7BD /* VisitorView.xib in Resources */,
 				D2CD84AC22E4B216009783E5 /* Discover.storyboard in Resources */,
 				D2CD84A522E4B1CD009783E5 /* Home.storyboard in Resources */,
 				D2CD845A22E45500009783E5 /* Assets.xcassets in Resources */,
@@ -361,9 +403,11 @@
 			files = (
 				D2CD849122E4995F009783E5 /* ProfileTableViewController.swift in Sources */,
 				D2CD84B322E4BA64009783E5 /* UIButton-Extension.swift in Sources */,
+				D2E72EEB22E6EE060062C7BD /* BaseTableViewController.swift in Sources */,
 				D2CD848B22E4992F009783E5 /* HomeTableViewController.swift in Sources */,
 				D2CD845322E45500009783E5 /* AppDelegate.swift in Sources */,
 				D2CD848D22E49943009783E5 /* MessageTableViewController.swift in Sources */,
+				D2E72EED22E6F05D0062C7BD /* VisitorView.swift in Sources */,
 				D2CD848F22E49951009783E5 /* DiscoverTableViewController.swift in Sources */,
 				D2CD848922E49912009783E5 /* MainViewController.swift in Sources */,
 			);
