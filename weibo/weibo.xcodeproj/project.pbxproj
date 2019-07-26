@@ -28,6 +28,10 @@
 		D2E72EEF22E6F0AA0062C7BD /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E72EEE22E6F0AA0062C7BD /* VisitorView.xib */; };
 		D2E72EF122E70E9C0062C7BD /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E72EF022E70E9C0062C7BD /* UIBarButtonItem-Extension.swift */; };
 		D2E72EF322E713F10062C7BD /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E72EF222E713F10062C7BD /* TitleButton.swift */; };
+		D2EE1CC322E74EE100138893 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EE1CC122E74EE100138893 /* PopoverViewController.swift */; };
+		D2EE1CC422E74EE100138893 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2EE1CC222E74EE100138893 /* PopoverViewController.xib */; };
+		D2EE1CC622E7565900138893 /* WZPresntationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EE1CC522E7565900138893 /* WZPresntationController.swift */; };
+		D2EE1CC822E76FF500138893 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EE1CC722E76FF500138893 /* PopoverAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		D2E72EEE22E6F0AA0062C7BD /* VisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 		D2E72EF022E70E9C0062C7BD /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
 		D2E72EF222E713F10062C7BD /* TitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		D2EE1CC122E74EE100138893 /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		D2EE1CC222E74EE100138893 /* PopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
+		D2EE1CC522E7565900138893 /* WZPresntationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZPresntationController.swift; sourceTree = "<group>"; };
+		D2EE1CC722E76FF500138893 /* PopoverAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				D2CD84A322E4B1CD009783E5 /* Home.storyboard */,
+				D2EE1CC022E74E4E00138893 /* UIPropover */,
 				D2CD846722E459AA009783E5 /* Controller */,
 				D2CD846822E459AA009783E5 /* Model */,
 				D2CD846922E459AA009783E5 /* View */,
@@ -329,6 +338,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		D2EE1CC022E74E4E00138893 /* UIPropover */ = {
+			isa = PBXGroup;
+			children = (
+				D2EE1CC122E74EE100138893 /* PopoverViewController.swift */,
+				D2EE1CC222E74EE100138893 /* PopoverViewController.xib */,
+				D2EE1CC522E7565900138893 /* WZPresntationController.swift */,
+				D2EE1CC722E76FF500138893 /* PopoverAnimator.swift */,
+			);
+			path = UIPropover;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -393,6 +413,7 @@
 				D2CD84A522E4B1CD009783E5 /* Home.storyboard in Resources */,
 				D2CD845A22E45500009783E5 /* Assets.xcassets in Resources */,
 				D2CD849522E49A19009783E5 /* main.json in Resources */,
+				D2EE1CC422E74EE100138893 /* PopoverViewController.xib in Resources */,
 				D2CD84A722E4B1EA009783E5 /* Message.storyboard in Resources */,
 				D2CD84AF22E4B22A009783E5 /* Profile.storyboard in Resources */,
 				D2CD845822E45500009783E5 /* Main.storyboard in Resources */,
@@ -409,10 +430,13 @@
 			files = (
 				D2E72EF122E70E9C0062C7BD /* UIBarButtonItem-Extension.swift in Sources */,
 				D2CD849122E4995F009783E5 /* ProfileTableViewController.swift in Sources */,
+				D2EE1CC622E7565900138893 /* WZPresntationController.swift in Sources */,
 				D2CD84B322E4BA64009783E5 /* UIButton-Extension.swift in Sources */,
 				D2E72EEB22E6EE060062C7BD /* BaseTableViewController.swift in Sources */,
+				D2EE1CC322E74EE100138893 /* PopoverViewController.swift in Sources */,
 				D2E72EF322E713F10062C7BD /* TitleButton.swift in Sources */,
 				D2CD848B22E4992F009783E5 /* HomeTableViewController.swift in Sources */,
+				D2EE1CC822E76FF500138893 /* PopoverAnimator.swift in Sources */,
 				D2CD845322E45500009783E5 /* AppDelegate.swift in Sources */,
 				D2CD848D22E49943009783E5 /* MessageTableViewController.swift in Sources */,
 				D2E72EED22E6F05D0062C7BD /* VisitorView.swift in Sources */,
