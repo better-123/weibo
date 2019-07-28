@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14DA4C80EF89419C0B1209EF /* Pods_weibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E63A77DA9B5F0DC51CF7AE0E /* Pods_weibo.framework */; };
 		D2CD845322E45500009783E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CD845222E45500009783E5 /* AppDelegate.swift */; };
 		D2CD845822E45500009783E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2CD845622E45500009783E5 /* Main.storyboard */; };
 		D2CD845A22E45500009783E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2CD845922E45500009783E5 /* Assets.xcassets */; };
@@ -32,9 +33,16 @@
 		D2EE1CC422E74EE100138893 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2EE1CC222E74EE100138893 /* PopoverViewController.xib */; };
 		D2EE1CC622E7565900138893 /* WZPresntationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EE1CC522E7565900138893 /* WZPresntationController.swift */; };
 		D2EE1CC822E76FF500138893 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EE1CC722E76FF500138893 /* PopoverAnimator.swift */; };
+		D2F7B0F222ED660700B7D1CB /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7B0F122ED660700B7D1CB /* NetworkTools.swift */; };
+		D2F7B0F622ED667A00B7D1CB /* QAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7B0F422ED667A00B7D1CB /* QAuthViewController.swift */; };
+		D2F7B0F722ED667A00B7D1CB /* QAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F7B0F522ED667A00B7D1CB /* QAuthViewController.xib */; };
+		D2F7B0F922ED751000B7D1CB /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7B0F822ED751000B7D1CB /* Common.swift */; };
+		D2F7B0FB22ED8E6E00B7D1CB /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F7B0FA22ED8E6E00B7D1CB /* UserAccount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A31E511DC75C5DE4E7B0169 /* Pods-weibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weibo/Pods-weibo.debug.xcconfig"; sourceTree = "<group>"; };
+		904E7D5CF29890CAED9EB6B8 /* Pods-weibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-weibo/Pods-weibo.release.xcconfig"; sourceTree = "<group>"; };
 		D2CD844F22E45500009783E5 /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2CD845222E45500009783E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2CD845722E45500009783E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +70,12 @@
 		D2EE1CC222E74EE100138893 /* PopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		D2EE1CC522E7565900138893 /* WZPresntationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZPresntationController.swift; sourceTree = "<group>"; };
 		D2EE1CC722E76FF500138893 /* PopoverAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
+		D2F7B0F122ED660700B7D1CB /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		D2F7B0F422ED667A00B7D1CB /* QAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAuthViewController.swift; sourceTree = "<group>"; };
+		D2F7B0F522ED667A00B7D1CB /* QAuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QAuthViewController.xib; sourceTree = "<group>"; };
+		D2F7B0F822ED751000B7D1CB /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		D2F7B0FA22ED8E6E00B7D1CB /* UserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		E63A77DA9B5F0DC51CF7AE0E /* Pods_weibo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weibo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,17 +83,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14DA4C80EF89419C0B1209EF /* Pods_weibo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BCEA216DBF463630060216E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E63A77DA9B5F0DC51CF7AE0E /* Pods_weibo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D2CD844622E45500009783E5 = {
 			isa = PBXGroup;
 			children = (
 				D2CD845122E45500009783E5 /* weibo */,
 				D2CD845022E45500009783E5 /* Products */,
+				F9F34D94F5D086B2B102D5C3 /* Pods */,
+				BCEA216DBF463630060216E6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -255,6 +280,7 @@
 		D2CD847622E459AA009783E5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D2F7B0F322ED663D00B7D1CB /* QAuth */,
 				D2CD845622E45500009783E5 /* Main.storyboard */,
 				D2CD847722E459AA009783E5 /* Controller */,
 				D2CD847822E459AA009783E5 /* Model */,
@@ -288,7 +314,9 @@
 		D2CD84B022E4B2BC009783E5 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				D2F7B0F122ED660700B7D1CB /* NetworkTools.swift */,
 				D2CD84B122E4BA1F009783E5 /* Category */,
+				D2F7B0F822ED751000B7D1CB /* Common.swift */,
 			);
 			name = Tools;
 			path = weibo/Tools;
@@ -349,6 +377,25 @@
 			path = UIPropover;
 			sourceTree = "<group>";
 		};
+		D2F7B0F322ED663D00B7D1CB /* QAuth */ = {
+			isa = PBXGroup;
+			children = (
+				D2F7B0F422ED667A00B7D1CB /* QAuthViewController.swift */,
+				D2F7B0F522ED667A00B7D1CB /* QAuthViewController.xib */,
+				D2F7B0FA22ED8E6E00B7D1CB /* UserAccount.swift */,
+			);
+			path = QAuth;
+			sourceTree = "<group>";
+		};
+		F9F34D94F5D086B2B102D5C3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A31E511DC75C5DE4E7B0169 /* Pods-weibo.debug.xcconfig */,
+				904E7D5CF29890CAED9EB6B8 /* Pods-weibo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -356,9 +403,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2CD846122E45500009783E5 /* Build configuration list for PBXNativeTarget "weibo" */;
 			buildPhases = (
+				C6FD5646AA4DD16F3D030044 /* [CP] Check Pods Manifest.lock */,
 				D2CD844B22E45500009783E5 /* Sources */,
 				D2CD844C22E45500009783E5 /* Frameworks */,
 				D2CD844D22E45500009783E5 /* Resources */,
+				7A05E295A883BDB828EEB614 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -417,22 +466,80 @@
 				D2CD84A722E4B1EA009783E5 /* Message.storyboard in Resources */,
 				D2CD84AF22E4B22A009783E5 /* Profile.storyboard in Resources */,
 				D2CD845822E45500009783E5 /* Main.storyboard in Resources */,
+				D2F7B0F722ED667A00B7D1CB /* QAuthViewController.xib in Resources */,
 				D2CD84AA22E4B1FE009783E5 /* Release.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7A05E295A883BDB828EEB614 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-weibo/Pods-weibo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weibo/Pods-weibo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6FD5646AA4DD16F3D030044 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-weibo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D2CD844B22E45500009783E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F7B0F922ED751000B7D1CB /* Common.swift in Sources */,
 				D2E72EF122E70E9C0062C7BD /* UIBarButtonItem-Extension.swift in Sources */,
+				D2F7B0FB22ED8E6E00B7D1CB /* UserAccount.swift in Sources */,
 				D2CD849122E4995F009783E5 /* ProfileTableViewController.swift in Sources */,
+				D2F7B0F222ED660700B7D1CB /* NetworkTools.swift in Sources */,
 				D2EE1CC622E7565900138893 /* WZPresntationController.swift in Sources */,
 				D2CD84B322E4BA64009783E5 /* UIButton-Extension.swift in Sources */,
 				D2E72EEB22E6EE060062C7BD /* BaseTableViewController.swift in Sources */,
+				D2F7B0F622ED667A00B7D1CB /* QAuthViewController.swift in Sources */,
 				D2EE1CC322E74EE100138893 /* PopoverViewController.swift in Sources */,
 				D2E72EF322E713F10062C7BD /* TitleButton.swift in Sources */,
 				D2CD848B22E4992F009783E5 /* HomeTableViewController.swift in Sources */,
@@ -609,6 +716,7 @@
 		};
 		D2CD846222E45500009783E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A31E511DC75C5DE4E7B0169 /* Pods-weibo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -628,6 +736,7 @@
 		};
 		D2CD846322E45500009783E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 904E7D5CF29890CAED9EB6B8 /* Pods-weibo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

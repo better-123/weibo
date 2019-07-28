@@ -13,7 +13,7 @@ class BaseTableViewController: UITableViewController {
     ///访客视图
     lazy var visitorView : VisitorView = VisitorView.visitorView()
     ///是否登录
-    var isLogin : Bool = true
+    var isLogin : Bool = false
     
     ///加载视图
     override func loadView() {
@@ -58,5 +58,12 @@ extension BaseTableViewController {
     ///登录
     @objc private func loginBtnClick() {
         print("登录")
+        //创建授权控制器
+        let oauth = QAuthViewController()
+        
+        //包装导航控制器
+        let oauthNav = UINavigationController(rootViewController: oauth)
+        //弹出控制器
+        present(oauthNav, animated: true, completion: nil)
     }
 }
