@@ -21,10 +21,14 @@ class UserAccount: NSObject {
     }
     ///用户ID
     @objc var uid: String?
-    
-    
     ///过期日期
     var expires_date : Date?
+    ///用户昵称
+    @objc var screen_name: String?
+    ///用户头像地址
+    @objc var profile_image_url: String?
+    
+    
     
     //MARK:- 自定义构造函数
     init(dict: [String:AnyObject]) {
@@ -34,10 +38,10 @@ class UserAccount: NSObject {
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {}
     
-    override var description: String {
-        //模型对象转换为字典
-        return dictionaryWithValues(forKeys: ["access_token","expires_in","uid"]).description
-
-    }
+//    override var description: String {
+//        //模型对象转换为字典
+//        return dictionaryWithValues(forKeys: ["access_token","expires_in","uid","profile_image_url","screen_name"]).description
+//
+//    }
     
 }

@@ -126,7 +126,36 @@ extension QAuthViewController {
             let account = UserAccount(dict: accountDict)
             print(account)
             
-            
+            //获取用户信息
+            self.loadUserInfo(userAccount: account)
         }
+    }
+    ///请求用户信息
+    private func loadUserInfo(userAccount:UserAccount) {
+        //获取accessToken
+        guard let accessToken = userAccount.access_token else{
+            return
+        }
+        //获取uid
+        guard let uid = userAccount.uid else {
+            return
+        }
+        //获取用户信息
+        NetworkTools.shareInstance.loadUserInfo(accessToken: accessToken, uid: uid) { (result:[String : AnyObject]?, error:Error?) in
+            if error != nil {
+                print("请求数据错误:\(error)")
+                return
+            }
+            guard let userInfoDict = result else {
+                print("用户数据错误")
+                return
+            }
+            //从字典中取出昵称和头像地址
+            userAccount.screen_name = userInfoDict["screen_name"] as? String
+            userAccount.profile_image_url = userInfoDict["profile_image_url"] as? String
+            
+            print(userAccount)
+        }
+        
     }
 }

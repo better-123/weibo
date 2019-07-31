@@ -41,7 +41,7 @@ extension NetworkTools {
         //定义成功回调
         let successCallBack = { (task:URLSessionDataTask, result:Any?) in
             //task:任务,result:返回的结果
-            print("发送请求成功\(result)")
+            print("发送请求成功\(String(describing: result))")
             finished(result as AnyObject,nil)
         }
         //定义失败回调
@@ -79,4 +79,19 @@ extension NetworkTools {
         }
         
     }
+}
+//MARK: - 请求用户信息
+extension NetworkTools {
+    func loadUserInfo(accessToken:String,uid:String,finished:@escaping (_ result:[String:AnyObject]?,_ error:Error?)->()) {
+        //获取url
+        let urlString = "https://api.weibo.com/2/users/show.json"
+        //设置参数
+        let parameters = ["access_token":accessToken,"uid":uid]
+        
+        //发送网络请求
+        request(methodType: .GET, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result:AnyObject?, error:Error?) in
+            finished(result as? [String : AnyObject],error)
+        }
+    }
+    
 }
