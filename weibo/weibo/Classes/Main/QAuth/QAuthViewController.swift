@@ -132,38 +132,46 @@ extension QAuthViewController {
     }
     ///请求用户信息
     private func loadUserInfo(userAccount:UserAccount) {
-        //获取accessToken
+        //1获取accessToken
         guard let accessToken = userAccount.access_token else{
             return
         }
-        //获取uid
+        //2获取uid
         guard let uid = userAccount.uid else {
             return
         }
-        //获取用户信息
+        //3获取用户信息
         NetworkTools.shareInstance.loadUserInfo(accessToken: accessToken, uid: uid) { (result:[String : AnyObject]?, error:Error?) in
+            //3.1错误校验
             if error != nil {
                 print("请求数据错误:\(String(describing: error))")
                 return
             }
+            //3.2拿到用户信息的结果
             guard let userInfoDict = result else {
                 print("用户数据错误")
                 return
             }
-            //从字典中取出昵称和头像地址
+            //3.3从字典中取出昵称和头像地址
             userAccount.screen_name = userInfoDict["screen_name"] as? String
             userAccount.profile_image_url = userInfoDict["profile_image_url"] as? String
             
 //            print(userAccount)
-            //保存账号信息(归档/解档),如果要保存一个对象,这个对象对应的这个模型必须遵守NSCoding协议
-            //获取沙盒路径
+            //3.4保存账号信息(归档/解档),如果要保存一个对象,这个对象对应的这个模型必须遵守NSCoding协议
+            //3.4.1获取沙盒路径
             var accountPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
             accountPath = accountPath + "/account.plist"
             print(accountPath)
-            NSKeyedArchiver.archiveRootObject(userAccount, toFile: accountPath)
+            //3.4.2保存对象
+            NSKeyedArchiver.archiveRootObject(userAccount, toFile: UserAccountViewModel.shareInstance.accountPath)
             
             
-            
+            //3.5将account对象设置到单例对象中
+            UserAccountViewModel.shareInstance.account = userAccount
+            //3.6退出当前控制器
+            self.dismiss(animated: false, completion: {
+                UIApplication.shared.keyWindow?.rootViewController = WelcomeViewController()
+            })
         }
         
     }

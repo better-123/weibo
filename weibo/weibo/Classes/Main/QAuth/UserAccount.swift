@@ -16,8 +16,7 @@ class UserAccount: NSObject,NSCoding {
     ///access_token
     @objc var access_token: String?
     ///过期时间(秒)
-    var expires_in: TimeInterval = 157679999.0
-    {
+    @objc var expires_in: TimeInterval = 0.0 {
         didSet {
             expires_date = Date(timeIntervalSinceNow: expires_in)
         }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		14DA4C80EF89419C0B1209EF /* Pods_weibo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E63A77DA9B5F0DC51CF7AE0E /* Pods_weibo.framework */; };
+		D201F19622F2D6AF00A6FCE0 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D201F19522F2D6AF00A6FCE0 /* UserAccountViewModel.swift */; };
+		D201F19A22F2DCF900A6FCE0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D201F19822F2DCF900A6FCE0 /* WelcomeViewController.swift */; };
+		D201F19B22F2DCF900A6FCE0 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D201F19922F2DCF900A6FCE0 /* WelcomeViewController.xib */; };
 		D2CD845322E45500009783E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CD845222E45500009783E5 /* AppDelegate.swift */; };
 		D2CD845822E45500009783E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2CD845622E45500009783E5 /* Main.storyboard */; };
 		D2CD845A22E45500009783E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2CD845922E45500009783E5 /* Assets.xcassets */; };
@@ -43,6 +46,9 @@
 /* Begin PBXFileReference section */
 		6A31E511DC75C5DE4E7B0169 /* Pods-weibo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weibo/Pods-weibo.debug.xcconfig"; sourceTree = "<group>"; };
 		904E7D5CF29890CAED9EB6B8 /* Pods-weibo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo.release.xcconfig"; path = "Pods/Target Support Files/Pods-weibo/Pods-weibo.release.xcconfig"; sourceTree = "<group>"; };
+		D201F19522F2D6AF00A6FCE0 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
+		D201F19822F2DCF900A6FCE0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		D201F19922F2DCF900A6FCE0 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		D2CD844F22E45500009783E5 /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2CD845222E45500009783E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2CD845722E45500009783E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +102,15 @@
 				E63A77DA9B5F0DC51CF7AE0E /* Pods_weibo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D201F19722F2DCC200A6FCE0 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				D201F19822F2DCF900A6FCE0 /* WelcomeViewController.swift */,
+				D201F19922F2DCF900A6FCE0 /* WelcomeViewController.xib */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		D2CD844622E45500009783E5 = {
@@ -280,6 +295,7 @@
 		D2CD847622E459AA009783E5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D201F19722F2DCC200A6FCE0 /* Welcome */,
 				D2F7B0F322ED663D00B7D1CB /* QAuth */,
 				D2CD845622E45500009783E5 /* Main.storyboard */,
 				D2CD847722E459AA009783E5 /* Controller */,
@@ -383,6 +399,7 @@
 				D2F7B0F422ED667A00B7D1CB /* QAuthViewController.swift */,
 				D2F7B0F522ED667A00B7D1CB /* QAuthViewController.xib */,
 				D2F7B0FA22ED8E6E00B7D1CB /* UserAccount.swift */,
+				D201F19522F2D6AF00A6FCE0 /* UserAccountViewModel.swift */,
 			);
 			path = QAuth;
 			sourceTree = "<group>";
@@ -459,6 +476,7 @@
 				D2CD845D22E45500009783E5 /* LaunchScreen.storyboard in Resources */,
 				D2E72EEF22E6F0AA0062C7BD /* VisitorView.xib in Resources */,
 				D2CD84AC22E4B216009783E5 /* Discover.storyboard in Resources */,
+				D201F19B22F2DCF900A6FCE0 /* WelcomeViewController.xib in Resources */,
 				D2CD84A522E4B1CD009783E5 /* Home.storyboard in Resources */,
 				D2CD845A22E45500009783E5 /* Assets.xcassets in Resources */,
 				D2CD849522E49A19009783E5 /* main.json in Resources */,
@@ -532,10 +550,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2F7B0F922ED751000B7D1CB /* Common.swift in Sources */,
+				D201F19A22F2DCF900A6FCE0 /* WelcomeViewController.swift in Sources */,
 				D2E72EF122E70E9C0062C7BD /* UIBarButtonItem-Extension.swift in Sources */,
 				D2F7B0FB22ED8E6E00B7D1CB /* UserAccount.swift in Sources */,
 				D2CD849122E4995F009783E5 /* ProfileTableViewController.swift in Sources */,
 				D2F7B0F222ED660700B7D1CB /* NetworkTools.swift in Sources */,
+				D201F19622F2D6AF00A6FCE0 /* UserAccountViewModel.swift in Sources */,
 				D2EE1CC622E7565900138893 /* WZPresntationController.swift in Sources */,
 				D2CD84B322E4BA64009783E5 /* UIButton-Extension.swift in Sources */,
 				D2E72EEB22E6EE060062C7BD /* BaseTableViewController.swift in Sources */,
