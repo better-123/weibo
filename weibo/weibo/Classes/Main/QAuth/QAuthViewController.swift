@@ -124,7 +124,7 @@ extension QAuthViewController {
                 return
             }
             let account = UserAccount(dict: accountDict)
-            print(account)
+            
             
             //获取用户信息
             self.loadUserInfo(userAccount: account)
@@ -143,7 +143,7 @@ extension QAuthViewController {
         //获取用户信息
         NetworkTools.shareInstance.loadUserInfo(accessToken: accessToken, uid: uid) { (result:[String : AnyObject]?, error:Error?) in
             if error != nil {
-                print("请求数据错误:\(error)")
+                print("请求数据错误:\(String(describing: error))")
                 return
             }
             guard let userInfoDict = result else {
@@ -154,7 +154,16 @@ extension QAuthViewController {
             userAccount.screen_name = userInfoDict["screen_name"] as? String
             userAccount.profile_image_url = userInfoDict["profile_image_url"] as? String
             
-            print(userAccount)
+//            print(userAccount)
+            //保存账号信息(归档/解档),如果要保存一个对象,这个对象对应的这个模型必须遵守NSCoding协议
+            //获取沙盒路径
+            var accountPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+            accountPath = accountPath + "/account.plist"
+            print(accountPath)
+            NSKeyedArchiver.archiveRootObject(userAccount, toFile: accountPath)
+            
+            
+            
         }
         
     }

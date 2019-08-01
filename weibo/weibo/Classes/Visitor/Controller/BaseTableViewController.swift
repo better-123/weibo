@@ -17,6 +17,19 @@ class BaseTableViewController: UITableViewController {
     
     ///加载视图
     override func loadView() {
+        //获取沙盒路径
+        var accountPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        accountPath = accountPath + "/account.plist"
+        //读取用户信息
+        let account = NSKeyedUnarchiver.unarchiveObject(withFile: accountPath) as? UserAccount
+        if let account = account {
+            //取出access_token，判断有无过期
+            if let expiresDate = account.expires_date {
+                isLogin = expiresDate.compare(Date()) == ComparisonResult.orderedDescending
+            }
+        }
+        
+        
         isLogin ? super.loadView() : configurVisitorView()
     }
 
