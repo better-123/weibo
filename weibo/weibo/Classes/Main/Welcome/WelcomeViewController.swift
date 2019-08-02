@@ -29,6 +29,7 @@ class WelcomeViewController: UIViewController {
         //执行动画
         //Damping:阻力系数，阻力系数越大弹的效果越不明显(0,1),initialSpringVelocity:初始化速度,options:枚举类型(动画效果类型,先快后慢或者先慢后快以及其他)
         UIView.animate(withDuration: 2.0, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 5.0, options: [], animations: {
+            //执行动画
             self.view.layoutIfNeeded()
         }) { (Bool) in
             UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!

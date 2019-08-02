@@ -18,6 +18,9 @@ class HomeTableViewController: BaseTableViewController {
     private lazy var popoverAnimator : PopoverAnimator = PopoverAnimator {[weak self] (Bool) in
         self?.navTitleBtn.isSelected = Bool
     }
+    ///微博数据数组
+    private lazy var viewModels: [StatusViewModel] = [StatusViewModel]()
+    
     //MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,14 @@ class HomeTableViewController: BaseTableViewController {
         
         ///2.登录后
         configurNavigationBar()
+        ///3.登录后请求数据
+        loadStatuese()
+        
+        //根据约束设置tableviewcell必须设置这两个参数
+        self.tableView.rowHeight = UITableView.automaticDimension
+        //设置tableviewcell的估算高度
+        tableView.estimatedRowHeight = 200
+        
     }
 }
 
@@ -71,6 +82,46 @@ extension HomeTableViewController {
         //采用的闭包形式,在创建popoverAnimator对象时,赋值修改按钮的状态
     }
 }
+//MARK: - 请求数据
+extension HomeTableViewController {
+    private func loadStatuese() {
+        NetworkTools.shareInstance.loadStatuses { (result:[[String : AnyObject]]?, error:Error?) in
+            //错误校验
+            if error != nil {
+                print(error as Any)
+                return
+            }
+            //获取可选类型数组
+            guard let resultArray = result else {
+                return
+            }
+            //遍历微博对应字典
+            for statusesDict in resultArray {
+                let status = Status(dict: statusesDict)
+                let viewModel = StatusViewModel(status: status)
+                self.viewModels.append(viewModel)
+            }
+            //4.刷新表格
+            self.tableView.reloadData()
+        }
+    }
+}
 
-
+//MARK:- tableView数据源方法
+extension HomeTableViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModels.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //创建cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCellID") as! HomeViewCell
+        
+        //给cell设置数据
+        let viewModel = viewModels[indexPath.row]
+        cell.viewModel = viewModel
+        return cell
+        
+        
+    }
+}
 

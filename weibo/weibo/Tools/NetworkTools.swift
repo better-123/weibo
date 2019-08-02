@@ -41,7 +41,7 @@ extension NetworkTools {
         //定义成功回调
         let successCallBack = { (task:URLSessionDataTask, result:Any?) in
             //task:任务,result:返回的结果
-            print("发送请求成功\(String(describing: result))")
+//            print("发送请求成功\(String(describing: result))")
             finished(result as AnyObject,nil)
         }
         //定义失败回调
@@ -95,3 +95,25 @@ extension NetworkTools {
     }
     
 }
+//MARK: - 请求用户信息
+extension NetworkTools {
+    func loadStatuses(finished:@escaping (_ result:[[String:AnyObject]]?,_ error:Error?)->()) {
+        //获取请求路径
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        
+        //获取请求参数
+        let parameters = ["access_token":(UserAccountViewModel.shareInstance.account?.access_token)!]
+        //发送网络请求
+        request(methodType: .GET, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result:AnyObject?, error:Error?) in
+            //1获取字典数据
+            guard let resultDict = result as? [String: AnyObject] else {
+                finished(nil,error)
+                return
+            }
+            //2将数组数据回调给外界
+            finished((resultDict["statuses"] as? [[String : AnyObject]]),error)
+        }
+        
+    }
+}
+

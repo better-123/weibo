@@ -24,7 +24,7 @@ class UserAccount: NSObject,NSCoding {
     ///用户ID
     @objc var uid: String?
     ///过期日期
-    var expires_date : Date?
+    @objc var expires_date : Date?
     ///用户昵称
     @objc var screen_name: String?
     ///用户头像地址
