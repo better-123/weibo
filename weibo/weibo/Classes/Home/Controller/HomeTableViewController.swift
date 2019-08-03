@@ -62,7 +62,11 @@ extension HomeTableViewController {
         ///设置右侧的item(通过给类增加便利构造函数来创建我们想要的view)
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "icon1")
         ///设置中间的titleview
-        navTitleBtn.setTitle("方一岚的倾世容颜", for: .normal)
+        let screen_name = UserAccountViewModel.shareInstance.account?.screen_name
+        if let screen_name = screen_name {
+            navTitleBtn.setTitle("\(screen_name)", for: .normal)
+        }
+//        navTitleBtn.setTitle("方一岚的倾世容颜", for: .normal)
         ///监听navTitleBtn的点击
         navTitleBtn.addTarget(self, action: #selector(navTitleBtnClick(titleBtn:)), for: .touchUpInside)
         navigationItem.titleView = navTitleBtn

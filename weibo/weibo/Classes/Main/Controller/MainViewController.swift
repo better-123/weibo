@@ -146,5 +146,13 @@ extension MainViewController {
     //swift:如果在swift中将函数声明成private,那么函数不会被添加到方法列表中,使用@SEL方法去监听函数,程序就会报错,要想解决这个问题,要么去掉private,要么在private前面加上@objc
     @objc private func releaseBtnClick() {
         print("releaseClick")
+        //1.创建Releaseview
+        let releaseViewController = ReleaseViewController()
+        //2.包装导航控制器
+        let releaseNav = UINavigationController(rootViewController: releaseViewController)
+        //3.弹出发布控制器view
+        present(releaseNav, animated: true, completion: nil)
+        
+        
     }
 }
