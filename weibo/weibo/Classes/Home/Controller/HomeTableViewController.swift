@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SDWebImage
+import MJRefresh
 
 class HomeTableViewController: BaseTableViewController {
 
@@ -35,18 +37,22 @@ class HomeTableViewController: BaseTableViewController {
         ///2.登录后
         configurNavigationBar()
         ///3.登录后请求数据
-        loadStatuese()
+//        loadStatuese()
         
         //根据约束设置tableviewcell必须设置这两个参数
         self.tableView.rowHeight = UITableView.automaticDimension
         //设置tableviewcell的估算高度
         tableView.estimatedRowHeight = 200
         
+        //5.布局header
+        configurHeaderView()
+        configurFooterView()
     }
 }
 
 //MARK: - 设置UI界面
 extension HomeTableViewController {
+    //布局nav的左右按钮和title
     private func configurNavigationBar() {
         ///设置左侧item(通过给类增加便利构造函数来创建我们想要的view)
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "icon0")
@@ -58,6 +64,23 @@ extension HomeTableViewController {
         navTitleBtn.addTarget(self, action: #selector(navTitleBtnClick(titleBtn:)), for: .touchUpInside)
         navigationItem.titleView = navTitleBtn
         
+    }
+    //布局下拉刷新按钮
+    private func configurHeaderView() {
+        //1.创建headerView
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(HomeTableViewController.loadNewStatuses))
+        //2.设置header属性
+        header?.setTitle("下拉刷新", for: .idle)
+        header?.setTitle("松开刷新", for: .pulling)
+        header?.setTitle("加载中...", for: .refreshing)
+        //3.设置tableview的header
+        tableView.mj_header = header
+        //4.进入刷新状态
+        tableView.mj_header.beginRefreshing()
+    }
+    //布局上拉加载更多按钮
+    private func configurFooterView() {
+        tableView.mj_footer = MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(HomeTableViewController.loadMoreStatuses))
     }
 }
 //MARK: - 事件监听函数
@@ -84,8 +107,30 @@ extension HomeTableViewController {
 }
 //MARK: - 请求数据
 extension HomeTableViewController {
-    private func loadStatuese() {
-        NetworkTools.shareInstance.loadStatuses { (result:[[String : AnyObject]]?, error:Error?) in
+    
+    //下拉刷新加载最新数据
+    @objc private func loadNewStatuses() {
+        print("下拉刷新")
+        loadStatuese(isNewData: true)
+        
+    }
+    //上拉加载更多数据
+    @objc private func loadMoreStatuses() {
+        print("上拉刷新")
+       loadStatuese(isNewData: false)
+    }
+    
+    private func loadStatuese(isNewData: Bool) {
+        //1.获取since_id/max_id
+        var since_id = 0
+        var max_id = 0
+        if isNewData {
+            since_id = viewModels.first?.status?.mid ?? 0
+        } else {
+            max_id = viewModels.last?.status?.mid ?? 0
+            max_id = max_id == 0 ? 0 : (max_id-1)
+        }
+        NetworkTools.shareInstance.loadStatuses(since_id: since_id, max_id: max_id) { (result:[[String : AnyObject]]?, error:Error?) in
             //错误校验
             if error != nil {
                 print(error as Any)
@@ -96,15 +141,51 @@ extension HomeTableViewController {
                 return
             }
             //遍历微博对应字典
+            var tempViewModel = [StatusViewModel]()
             for statusesDict in resultArray {
                 let status = Status(dict: statusesDict)
                 let viewModel = StatusViewModel(status: status)
-                self.viewModels.append(viewModel)
+                //  self.viewModels.append(viewModel)
+                tempViewModel.append(viewModel)
             }
-            //4.刷新表格
+            //将数据放入到成员变量数组中
+            if isNewData {
+                self.viewModels = tempViewModel + self.viewModels
+            }else {
+                self.viewModels += tempViewModel
+            }
+            
+            //4.缓存图片(为显示微博单张配图)
+            //            self.cacheImages(viewModels: self.viewModels)
+            //5.刷新表格
             self.tableView.reloadData()
+            //6.结束刷新
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
         }
     }
+    
+//    private func cacheImages(viewModels:[StatusViewModel]) {
+//        //1.创建组
+//        let group = DispatchGroup()
+//        //2.缓存图片
+//        for viewModel in viewModels {
+//            for picUrl in viewModel.picUrls {
+//                group.enter()
+//                SDWebImageManager.shared().imageDownloader?.downloadImage(with: picUrl, options: [], progress: nil, completed: { (image, _, _, _) in
+////                    print("下载一张图片")
+////                    print(image)
+//                    group.leave()
+//                })
+//            }
+//        }
+//        //刷新表格
+//        group.notify(queue: .main) {
+//            self.tableView.reloadData()
+//            print("刷新表格")
+//        }
+//
+//    }
 }
 
 //MARK:- tableView数据源方法

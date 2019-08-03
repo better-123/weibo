@@ -63,8 +63,8 @@
                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="方一岚的倾世容颜" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzW-kc-NDE" userLabel="正文lable">
-                                            <rect key="frame" x="26" y="71" width="122.5" height="159"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="方一岚的倾世容颜" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzW-kc-NDE" userLabel="正文lable">
+                                            <rect key="frame" x="26" y="71" width="122.5" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="122.5" id="Qzn-yR-ofb"/>
                                             </constraints>
@@ -116,34 +116,98 @@
                                                 <constraint firstItem="gsK-t5-h3j" firstAttribute="leading" secondItem="h2I-1K-muB" secondAttribute="leading" id="zI5-GP-h3X"/>
                                             </constraints>
                                         </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5lw-X8-Ohi" userLabel="转发背景view">
+                                            <rect key="frame" x="0.0" y="97" width="375" height="143"/>
+                                            <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                        </view>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kon-cv-SYi" userLabel="认证Imageview">
                                             <rect key="frame" x="46" y="36" width="20" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ahs-RU-Xaf" customClass="PicViewCollectionView" customModule="weibo" customModuleProvider="target">
+                                            <rect key="frame" x="54" y="137" width="212" height="83"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="240" id="Vz9-yb-fLb"/>
+                                                <constraint firstAttribute="height" constant="128" id="vs7-ff-82k"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ckg-n9-l5L">
+                                                <size key="itemSize" width="50" height="50"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PicCell" id="sOq-FN-bL5" customClass="PicCollectionViewCell" customModule="weibo" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yJL-A9-H9T">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="yJL-A9-H9T" secondAttribute="bottom" id="3bT-cR-psL"/>
+                                                        <constraint firstAttribute="trailing" secondItem="yJL-A9-H9T" secondAttribute="trailing" id="Y50-g6-ErI"/>
+                                                        <constraint firstItem="yJL-A9-H9T" firstAttribute="top" secondItem="sOq-FN-bL5" secondAttribute="top" id="cUr-bH-oDr"/>
+                                                        <constraint firstItem="yJL-A9-H9T" firstAttribute="leading" secondItem="sOq-FN-bL5" secondAttribute="leading" id="yRT-DR-IqE"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="iconView" destination="yJL-A9-H9T" id="Tw3-9K-o0z"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="方一岚" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zu-TQ-RS9">
+                                            <rect key="frame" x="26" y="109" width="122.5" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Imc-CM-hs6" firstAttribute="centerY" secondItem="dcp-hu-ZCb" secondAttribute="centerY" id="2yN-fa-4ca"/>
+                                        <constraint firstItem="5lw-X8-Ohi" firstAttribute="leading" secondItem="ZoZ-ye-qBH" secondAttribute="leading" id="62i-10-PIb"/>
+                                        <constraint firstItem="h2I-1K-muB" firstAttribute="top" secondItem="5lw-X8-Ohi" secondAttribute="bottom" id="6FN-oX-ww3"/>
                                         <constraint firstItem="IzW-kc-NDE" firstAttribute="leading" secondItem="BPQ-sc-hTo" secondAttribute="leading" id="7MD-Bm-ovI"/>
+                                        <constraint firstItem="4zu-TQ-RS9" firstAttribute="width" secondItem="IzW-kc-NDE" secondAttribute="width" id="7l5-So-LkC"/>
                                         <constraint firstItem="hK3-P3-ari" firstAttribute="leading" secondItem="dcp-hu-ZCb" secondAttribute="leading" id="8jb-F0-43s"/>
                                         <constraint firstItem="hK3-P3-ari" firstAttribute="bottom" secondItem="BPQ-sc-hTo" secondAttribute="bottom" id="8tq-kL-2HE"/>
+                                        <constraint firstItem="Ahs-RU-Xaf" firstAttribute="leading" secondItem="BPQ-sc-hTo" secondAttribute="leading" id="Bbe-qD-6WY"/>
                                         <constraint firstItem="Imc-CM-hs6" firstAttribute="leading" secondItem="dcp-hu-ZCb" secondAttribute="trailing" constant="10" id="CSe-20-uS7"/>
                                         <constraint firstItem="dEw-69-JIV" firstAttribute="centerY" secondItem="hK3-P3-ari" secondAttribute="centerY" id="ILa-bV-RRc"/>
+                                        <constraint firstItem="Ahs-RU-Xaf" firstAttribute="top" secondItem="4zu-TQ-RS9" secondAttribute="bottom" constant="10" id="J2b-aE-zbO"/>
                                         <constraint firstItem="BPQ-sc-hTo" firstAttribute="top" secondItem="ZoZ-ye-qBH" secondAttribute="topMargin" constant="5" id="Lgz-y8-PzX"/>
+                                        <constraint firstItem="5lw-X8-Ohi" firstAttribute="top" secondItem="IzW-kc-NDE" secondAttribute="bottom" constant="8" id="N7n-7W-Cw6"/>
                                         <constraint firstAttribute="bottom" secondItem="h2I-1K-muB" secondAttribute="bottom" id="PJn-dD-yKJ"/>
+                                        <constraint firstItem="4zu-TQ-RS9" firstAttribute="leading" secondItem="BPQ-sc-hTo" secondAttribute="leading" id="REg-cf-395"/>
+                                        <constraint firstAttribute="trailing" secondItem="5lw-X8-Ohi" secondAttribute="trailing" id="Vk8-pT-jJE"/>
                                         <constraint firstItem="dEw-69-JIV" firstAttribute="leading" secondItem="hK3-P3-ari" secondAttribute="trailing" constant="8" id="Xxw-0I-gaI"/>
                                         <constraint firstItem="IzW-kc-NDE" firstAttribute="top" secondItem="BPQ-sc-hTo" secondAttribute="bottom" constant="15" id="Yeu-vx-xEV"/>
                                         <constraint firstItem="dcp-hu-ZCb" firstAttribute="leading" secondItem="BPQ-sc-hTo" secondAttribute="trailing" constant="15" id="ZUX-Iy-NEq"/>
                                         <constraint firstItem="BPQ-sc-hTo" firstAttribute="leading" secondItem="ZoZ-ye-qBH" secondAttribute="leadingMargin" constant="10" id="b7p-Ql-C1T"/>
                                         <constraint firstAttribute="trailing" secondItem="h2I-1K-muB" secondAttribute="trailing" id="b8Q-tK-siz"/>
+                                        <constraint firstItem="4zu-TQ-RS9" firstAttribute="top" secondItem="IzW-kc-NDE" secondAttribute="bottom" constant="20" id="cIx-53-N3H"/>
                                         <constraint firstItem="h2I-1K-muB" firstAttribute="leading" secondItem="ZoZ-ye-qBH" secondAttribute="leading" id="f4f-8r-82Q"/>
                                         <constraint firstItem="dcp-hu-ZCb" firstAttribute="top" secondItem="BPQ-sc-hTo" secondAttribute="top" id="fQ0-m8-Ld7"/>
-                                        <constraint firstItem="h2I-1K-muB" firstAttribute="top" secondItem="IzW-kc-NDE" secondAttribute="bottom" constant="10" id="lqV-aa-Ym7"/>
+                                        <constraint firstItem="h2I-1K-muB" firstAttribute="top" secondItem="Ahs-RU-Xaf" secondAttribute="bottom" priority="750" constant="10" id="luL-18-9ll"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="PicViewCollection" destination="Ahs-RU-Xaf" id="rXF-5t-9ZL"/>
                                     <outlet property="contentLable" destination="IzW-kc-NDE" id="T6f-0V-lzs"/>
                                     <outlet property="contentLableWidth" destination="Qzn-yR-ofb" id="sav-og-pA4"/>
                                     <outlet property="headView" destination="BPQ-sc-hTo" id="aH2-eL-MRy"/>
+                                    <outlet property="picViewCollectionHeight" destination="vs7-ff-82k" id="diC-Ip-eIo"/>
+                                    <outlet property="picViewCollectionWidth" destination="Vz9-yb-fLb" id="u1o-5V-Aha"/>
+                                    <outlet property="pickViewcollectionBottom" destination="luL-18-9ll" id="rOK-PD-qQy"/>
+                                    <outlet property="retweetedBgColor" destination="5lw-X8-Ohi" id="xfb-YF-lMQ"/>
+                                    <outlet property="retweetedContentLable" destination="4zu-TQ-RS9" id="oiy-pb-9ZX"/>
+                                    <outlet property="retweetedLableTop" destination="cIx-53-N3H" id="MH2-MR-qyF"/>
                                     <outlet property="screenNameLable" destination="dcp-hu-ZCb" id="TkT-Xx-Q0I"/>
                                     <outlet property="sourceLable" destination="dEw-69-JIV" id="5c2-Rh-Dz9"/>
                                     <outlet property="timeLable" destination="hK3-P3-ari" id="1bk-CZ-dSe"/>

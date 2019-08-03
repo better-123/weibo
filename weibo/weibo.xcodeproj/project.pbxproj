@@ -11,6 +11,7 @@
 		D201F19622F2D6AF00A6FCE0 /* UserAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D201F19522F2D6AF00A6FCE0 /* UserAccountViewModel.swift */; };
 		D201F19A22F2DCF900A6FCE0 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D201F19822F2DCF900A6FCE0 /* WelcomeViewController.swift */; };
 		D201F19B22F2DCF900A6FCE0 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D201F19922F2DCF900A6FCE0 /* WelcomeViewController.xib */; };
+		D20C860922F543100038A7A2 /* PicViewCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20C860822F543100038A7A2 /* PicViewCollectionView.swift */; };
 		D2CD845322E45500009783E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CD845222E45500009783E5 /* AppDelegate.swift */; };
 		D2CD845822E45500009783E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2CD845622E45500009783E5 /* Main.storyboard */; };
 		D2CD845A22E45500009783E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2CD845922E45500009783E5 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		D201F19522F2D6AF00A6FCE0 /* UserAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewModel.swift; sourceTree = "<group>"; };
 		D201F19822F2DCF900A6FCE0 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D201F19922F2DCF900A6FCE0 /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		D20C860822F543100038A7A2 /* PicViewCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicViewCollectionView.swift; sourceTree = "<group>"; };
 		D2CD844F22E45500009783E5 /* weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2CD845222E45500009783E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2CD845722E45500009783E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				D2F6033022F4410200AE8ADB /* HomeViewCell.swift */,
+				D20C860822F543100038A7A2 /* PicViewCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-weibo/Pods-weibo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -534,6 +538,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -594,6 +599,7 @@
 				D2CD845322E45500009783E5 /* AppDelegate.swift in Sources */,
 				D2CD848D22E49943009783E5 /* MessageTableViewController.swift in Sources */,
 				D2E72EED22E6F05D0062C7BD /* VisitorView.swift in Sources */,
+				D20C860922F543100038A7A2 /* PicViewCollectionView.swift in Sources */,
 				D2CD848F22E49951009783E5 /* DiscoverTableViewController.swift in Sources */,
 				D2CD848922E49912009783E5 /* MainViewController.swift in Sources */,
 				D2F6032D22F427C800AE8ADB /* User.swift in Sources */,

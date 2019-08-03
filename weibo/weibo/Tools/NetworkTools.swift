@@ -97,12 +97,12 @@ extension NetworkTools {
 }
 //MARK: - 请求用户信息
 extension NetworkTools {
-    func loadStatuses(finished:@escaping (_ result:[[String:AnyObject]]?,_ error:Error?)->()) {
+    func loadStatuses(since_id: Int, max_id: Int, finished:@escaping (_ result:[[String:AnyObject]]?,_ error:Error?)->()) {
         //获取请求路径
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
         
         //获取请求参数
-        let parameters = ["access_token":(UserAccountViewModel.shareInstance.account?.access_token)!]
+        let parameters = ["access_token":(UserAccountViewModel.shareInstance.account?.access_token)!,"since_id":"\(since_id)","max_id":"\(max_id)"]
         //发送网络请求
         request(methodType: .GET, urlString: urlString, parameters: parameters as [String : AnyObject]) { (result:AnyObject?, error:Error?) in
             //1获取字典数据

@@ -17,9 +17,12 @@ class Status: NSObject {
     ///微博内容
     @objc var text: String?
     ///mid
-    var mid: Int = 0
+    @objc var mid: Int = 0
     ///用户
     @objc var user: User?
+    ///微博配图
+    @objc var pic_urls: [[String:String]]?
+    @objc var retweeted_status: Status?
     
     //自定义构造函数
     init(dict: [String:AnyObject]) {
@@ -28,6 +31,9 @@ class Status: NSObject {
         
         if let userDict = dict["user"] as? [String:AnyObject] {
             user = User(dict: userDict)
+        }
+        if let retweetedStatus = dict["retweeted_status"] as? [String:AnyObject] {
+            retweeted_status = Status(dict: retweetedStatus)
         }
     }
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
