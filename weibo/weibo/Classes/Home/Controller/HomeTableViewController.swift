@@ -22,11 +22,12 @@ class HomeTableViewController: BaseTableViewController {
     }
     ///微博数据数组
     private lazy var viewModels: [StatusViewModel] = [StatusViewModel]()
+    ///提示label
+    private lazy var tipLabel: UILabel = UILabel()
     
     //MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         ///1.没有登录
         visitorView.addRotationAnimation()
@@ -47,6 +48,8 @@ class HomeTableViewController: BaseTableViewController {
         //5.布局header
         configurHeaderView()
         configurFooterView()
+        //6.布局提示label
+        configurTipLabel()
     }
 }
 
@@ -81,6 +84,19 @@ extension HomeTableViewController {
     //布局上拉加载更多按钮
     private func configurFooterView() {
         tableView.mj_footer = MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(HomeTableViewController.loadMoreStatuses))
+    }
+    //布局提示label
+    private func configurTipLabel() {
+        //1.将提示label添加到付控件
+        navigationController?.navigationBar.insertSubview(tipLabel, at: 0)
+        
+        //2.设置label的frame
+        tipLabel.backgroundColor = UIColor.orange
+        tipLabel.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 32)
+        tipLabel.textColor = UIColor.white
+        tipLabel.font = UIFont.systemFont(ofSize: 14)
+        tipLabel.textAlignment = .center
+        tipLabel.isHidden = true
     }
 }
 //MARK: - 事件监听函数
@@ -147,6 +163,7 @@ extension HomeTableViewController {
                 let viewModel = StatusViewModel(status: status)
                 //  self.viewModels.append(viewModel)
                 tempViewModel.append(viewModel)
+                
             }
             //将数据放入到成员变量数组中
             if isNewData {
@@ -159,9 +176,28 @@ extension HomeTableViewController {
             //            self.cacheImages(viewModels: self.viewModels)
             //5.刷新表格
             self.tableView.reloadData()
+            //显示提示label
+            self.showTipLable(count: tempViewModel.count)
             //6.结束刷新
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
+        }
+    }
+    
+    //显示提示label
+    private func showTipLable(count : Int) {
+        //1.设置tipLabel的属性
+        tipLabel.isHidden = false
+        tipLabel.text = count == 0 ? "没有新数据" : "更新\(count)条数据"
+        //2.执行动画
+        UIView.animate(withDuration: 1.0, animations: {
+            self.tipLabel.frame.origin.y = 44
+        }) { (_) in
+            UIView.animate(withDuration: 1.0, delay: 1.5, options: [], animations: {
+                self.tipLabel.frame.origin.y = 0
+            }, completion: { (_) in
+                self.tipLabel.isHidden = true
+            })
         }
     }
     
