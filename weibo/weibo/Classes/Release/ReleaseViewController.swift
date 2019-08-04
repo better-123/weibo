@@ -22,6 +22,7 @@ class ReleaseViewController: UIViewController {
     @IBOutlet weak var pictureClick: UIButton!
     ///照片选择view
     @IBOutlet weak var picPickerView: PicPickerCollectionView!
+    @IBOutlet weak var emoticonButton: UIButton!
     
     
     //MARK: - 约束属性
@@ -39,8 +40,9 @@ class ReleaseViewController: UIViewController {
         //监听通知
         configurNotifications()
         
-        //监听案件点击
+        //监听按键点击
         pictureClick.addTarget(self, action: #selector(pictureChooseClick), for: .touchUpInside)
+        emoticonButton.addTarget(self, action: #selector(emoticonButtonClick), for: .touchUpInside)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -103,7 +105,7 @@ extension ReleaseViewController {
         }
         
     }
-    //按键点击
+    //图片按键点击
     @objc private func pictureChooseClick() {
         //退出键盘
         releaseTextView.resignFirstResponder()
@@ -114,7 +116,16 @@ extension ReleaseViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
+    //表情按钮点击
+    @objc private func emoticonButtonClick() {
+        //切换键盘三步
+        //1.退出键盘
+        releaseTextView.resignFirstResponder()
+        //2.切换键盘
+        releaseTextView.inputView = releaseTextView.inputView != nil ? nil : UISwitch()
+        //3.设置新的键盘为第一响应者
+        releaseTextView.becomeFirstResponder()
+    }
 }
 //MARK: - 添加照片和删除照片的事件
 extension ReleaseViewController {
@@ -173,8 +184,6 @@ extension ReleaseViewController : UITextViewDelegate,UIImagePickerControllerDele
     //拿到图库里照片数据
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         //1拿到选中照片
-//        print("--------------------------------")
-//        print(info)
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         //2将选中照片添加到数组中
         images.append(image)

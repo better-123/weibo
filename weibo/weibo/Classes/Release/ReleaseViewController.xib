@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReleaseViewController" customModule="weibo" customModuleProvider="target">
             <connections>
+                <outlet property="emoticonButton" destination="xma-zd-1EV" id="67r-Yl-vG1"/>
                 <outlet property="picPickerView" destination="rb8-6M-ofq" id="rvT-0W-ZHi"/>
                 <outlet property="pictureClick" destination="xlT-eB-UhE" id="q88-Hf-SLZ"/>
                 <outlet property="picturePickerHeight" destination="cCr-o6-sNV" id="aeB-sc-chc"/>
@@ -73,7 +74,11 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xma-zd-1EV">
                                 <rect key="frame" x="76" y="11" width="79" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="icon1-1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="表情" image="icon1-1">
+                                    <color key="titleColor" red="1" green="0.40886945699999999" blue="0.28666526819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <state key="highlighted" image="icon1-2"/>
                             </button>
                         </barButtonItem>
