@@ -32,6 +32,9 @@
 		D2CD84AC22E4B216009783E5 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2CD84AB22E4B216009783E5 /* Discover.storyboard */; };
 		D2CD84AF22E4B22A009783E5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2CD84AD22E4B22A009783E5 /* Profile.storyboard */; };
 		D2CD84B322E4BA64009783E5 /* UIButton-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CD84B222E4BA64009783E5 /* UIButton-Extension.swift */; };
+		D2DB4CD522F6C55200FA0EB7 /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB4CD422F6C55200FA0EB7 /* PicPickerCollectionView.swift */; };
+		D2DB4CD822F6CB2700FA0EB7 /* PicPickerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB4CD622F6CB2700FA0EB7 /* PicPickerCollectionViewCell.swift */; };
+		D2DB4CD922F6CB2700FA0EB7 /* PicPickerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2DB4CD722F6CB2700FA0EB7 /* PicPickerCollectionViewCell.xib */; };
 		D2E72EEB22E6EE060062C7BD /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E72EEA22E6EE060062C7BD /* BaseTableViewController.swift */; };
 		D2E72EED22E6F05D0062C7BD /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E72EEC22E6F05D0062C7BD /* VisitorView.swift */; };
 		D2E72EEF22E6F0AA0062C7BD /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2E72EEE22E6F0AA0062C7BD /* VisitorView.xib */; };
@@ -82,6 +85,9 @@
 		D2CD84AB22E4B216009783E5 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		D2CD84AE22E4B22A009783E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = weibo/Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		D2CD84B222E4BA64009783E5 /* UIButton-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton-Extension.swift"; sourceTree = "<group>"; };
+		D2DB4CD422F6C55200FA0EB7 /* PicPickerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionView.swift; sourceTree = "<group>"; };
+		D2DB4CD622F6CB2700FA0EB7 /* PicPickerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionViewCell.swift; sourceTree = "<group>"; };
+		D2DB4CD722F6CB2700FA0EB7 /* PicPickerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicPickerCollectionViewCell.xib; sourceTree = "<group>"; };
 		D2E72EEA22E6EE060062C7BD /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		D2E72EEC22E6F05D0062C7BD /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		D2E72EEE22E6F0AA0062C7BD /* VisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
@@ -136,6 +142,7 @@
 		D20C860A22F5DEFE0038A7A2 /* Release */ = {
 			isa = PBXGroup;
 			children = (
+				D2DB4CD322F6C51500FA0EB7 /* PicPicker */,
 				D20C860B22F5DF410038A7A2 /* ReleaseViewController.swift */,
 				D20C860C22F5DF410038A7A2 /* ReleaseViewController.xib */,
 				D20C860F22F5E3CC0038A7A2 /* ReleaseTitleView.swift */,
@@ -384,6 +391,16 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		D2DB4CD322F6C51500FA0EB7 /* PicPicker */ = {
+			isa = PBXGroup;
+			children = (
+				D2DB4CD422F6C55200FA0EB7 /* PicPickerCollectionView.swift */,
+				D2DB4CD622F6CB2700FA0EB7 /* PicPickerCollectionViewCell.swift */,
+				D2DB4CD722F6CB2700FA0EB7 /* PicPickerCollectionViewCell.xib */,
+			);
+			path = PicPicker;
+			sourceTree = "<group>";
+		};
 		D2E72EE622E6ED5C0062C7BD /* Visitor */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,6 +550,7 @@
 				D2CD845822E45500009783E5 /* Main.storyboard in Resources */,
 				D2F7B0F722ED667A00B7D1CB /* QAuthViewController.xib in Resources */,
 				D2CD84AA22E4B1FE009783E5 /* Release.storyboard in Resources */,
+				D2DB4CD922F6CB2700FA0EB7 /* PicPickerCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +619,7 @@
 				D2F7B0F922ED751000B7D1CB /* Common.swift in Sources */,
 				D201F19A22F2DCF900A6FCE0 /* WelcomeViewController.swift in Sources */,
 				D2F6032722F3EAB400AE8ADB /* Status.swift in Sources */,
+				D2DB4CD522F6C55200FA0EB7 /* PicPickerCollectionView.swift in Sources */,
 				D2E72EF122E70E9C0062C7BD /* UIBarButtonItem-Extension.swift in Sources */,
 				D2F7B0FB22ED8E6E00B7D1CB /* UserAccount.swift in Sources */,
 				D20C861222F5EE4C0038A7A2 /* ReleaseTextView.swift in Sources */,
@@ -622,6 +641,7 @@
 				D2EE1CC822E76FF500138893 /* PopoverAnimator.swift in Sources */,
 				D2CD845322E45500009783E5 /* AppDelegate.swift in Sources */,
 				D2CD848D22E49943009783E5 /* MessageTableViewController.swift in Sources */,
+				D2DB4CD822F6CB2700FA0EB7 /* PicPickerCollectionViewCell.swift in Sources */,
 				D2E72EED22E6F05D0062C7BD /* VisitorView.swift in Sources */,
 				D20C860922F543100038A7A2 /* PicViewCollectionView.swift in Sources */,
 				D2CD848F22E49951009783E5 /* DiscoverTableViewController.swift in Sources */,

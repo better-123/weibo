@@ -12,6 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReleaseViewController" customModule="weibo" customModuleProvider="target">
             <connections>
+                <outlet property="picPickerView" destination="rb8-6M-ofq" id="rvT-0W-ZHi"/>
+                <outlet property="pictureClick" destination="xlT-eB-UhE" id="q88-Hf-SLZ"/>
+                <outlet property="picturePickerHeight" destination="cCr-o6-sNV" id="aeB-sc-chc"/>
+                <outlet property="releaseTextView" destination="gs8-ax-79g" id="r2v-WR-5go"/>
+                <outlet property="toolBar" destination="U3X-pO-WQi" id="V3o-S2-MG1"/>
+                <outlet property="toolBarBottom" destination="kzN-VA-2Ti" id="X9b-O7-ehG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,21 +26,110 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gs8-ax-79g" customClass="ReleaseTextView" customModule="weibo" customModuleProvider="target">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gs8-ax-79g" customClass="ReleaseTextView" customModule="weibo" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="TBz-lQ-c7I"/>
+                    </connections>
                 </textView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="rb8-6M-ofq" customClass="PicPickerCollectionView" customModule="weibo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="cCr-o6-sNV"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CQ7-0F-wQD">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3X-pO-WQi">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Z8U-TX-p0x"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem style="plain" id="aph-g4-Xnp">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xlT-eB-UhE">
+                                <rect key="frame" x="16" y="5" width="60" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="9" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="照片" image="icon0-1">
+                                    <color key="titleColor" red="1" green="0.40886945699999999" blue="0.28666526819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted" image="icon0-2"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem style="plain" id="Loh-k7-O1l">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xma-zd-1EV">
+                                <rect key="frame" x="76" y="11" width="79" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icon1-1"/>
+                                <state key="highlighted" image="icon1-2"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="5Jl-G4-Prf"/>
+                        <barButtonItem style="plain" id="6in-7b-VJd">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="c1g-MG-uNx">
+                                <rect key="frame" x="157" y="11" width="45" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icon1-1"/>
+                                <state key="highlighted" image="icon1-2"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="1L8-Te-7h6"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="abT-9D-hBv"/>
+                        <barButtonItem style="plain" id="UIM-Sc-cBp">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="96C-eg-w5r">
+                                <rect key="frame" x="206" y="11" width="87" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icon2-1"/>
+                                <state key="highlighted" image="icon2-2"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem style="plain" id="Qt4-tI-PBA">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uyc-z5-U3G">
+                                <rect key="frame" x="293" y="11" width="66" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="icon1-1"/>
+                                <state key="highlighted" image="icon1-2"/>
+                            </button>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="gs8-ax-79g" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1C4-Sx-7ZH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gs8-ax-79g" secondAttribute="trailing" id="Fn1-3A-nkG"/>
+                <constraint firstItem="rb8-6M-ofq" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="S38-Ww-VyP"/>
                 <constraint firstItem="gs8-ax-79g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ybh-yB-Bq6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rb8-6M-ofq" secondAttribute="trailing" id="hB0-KG-UNv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gs8-ax-79g" secondAttribute="bottom" id="inG-4w-jYC"/>
+                <constraint firstItem="U3X-pO-WQi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kHx-dr-jXn"/>
+                <constraint firstItem="U3X-pO-WQi" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="kzN-VA-2Ti"/>
+                <constraint firstItem="U3X-pO-WQi" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="nyI-hx-zLD"/>
+                <constraint firstItem="rb8-6M-ofq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ruB-bS-gFk"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="53.600000000000001" y="54.422788605697157"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon0-1" width="17" height="18"/>
+        <image name="icon0-2" width="17" height="18"/>
+        <image name="icon1-1" width="16" height="18"/>
+        <image name="icon1-2" width="16" height="18"/>
+        <image name="icon2-1" width="15.5" height="18"/>
+        <image name="icon2-2" width="15.5" height="18"/>
+    </resources>
 </document>

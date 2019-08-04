@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PicPickerCollectionViewCell" customModule="weibo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r5G-6M-XZr">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NwI-cm-puo">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <state key="normal" title="照片"/>
+                        <state key="highlighted" title="松手有惊喜">
+                            <color key="titleColor" red="1" green="0.1069242056" blue="0.085784373880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="addPicClick" destination="gTV-IL-0wX" eventType="touchUpInside" id="cIz-DX-WZc"/>
+                        </connections>
+                    </button>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5U-Hr-Hfu">
+                        <rect key="frame" x="40" y="0.0" width="10" height="10"/>
+                        <color key="backgroundColor" red="1" green="0.1069242056" blue="0.085784373880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="10" id="diM-6b-QJW"/>
+                            <constraint firstAttribute="height" constant="10" id="m98-Ks-aUJ"/>
+                        </constraints>
+                        <state key="normal" title="X">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <state key="highlighted">
+                            <color key="titleColor" red="0.093747105819999996" green="0.074400075839999996" blue="0.1573631801" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="deletePhotoClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="QWN-i5-YHY"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="NwI-cm-puo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5dk-FZ-iuP"/>
+                <constraint firstAttribute="bottom" secondItem="r5G-6M-XZr" secondAttribute="bottom" id="G7T-Wn-Oum"/>
+                <constraint firstItem="r5G-6M-XZr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LVm-uc-x0C"/>
+                <constraint firstAttribute="bottom" secondItem="NwI-cm-puo" secondAttribute="bottom" id="RCx-dZ-ZSc"/>
+                <constraint firstAttribute="trailing" secondItem="Y5U-Hr-Hfu" secondAttribute="trailing" id="WRT-9k-zp3"/>
+                <constraint firstItem="Y5U-Hr-Hfu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="idZ-Ca-OkJ"/>
+                <constraint firstItem="NwI-cm-puo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="prG-Ma-W7i"/>
+                <constraint firstItem="r5G-6M-XZr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="txp-hi-RZV"/>
+                <constraint firstAttribute="trailing" secondItem="NwI-cm-puo" secondAttribute="trailing" id="wUx-im-aKR"/>
+                <constraint firstAttribute="trailing" secondItem="r5G-6M-XZr" secondAttribute="trailing" id="z6A-Yj-zmM"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="addPhotoButton" destination="NwI-cm-puo" id="AKD-6i-9Rd"/>
+                <outlet property="deletePhotoButton" destination="Y5U-Hr-Hfu" id="cp5-Qd-wbl"/>
+                <outlet property="photoImageView" destination="r5G-6M-XZr" id="uYV-9W-Apa"/>
+            </connections>
+            <point key="canvasLocation" x="52.799999999999997" y="48.575712143928037"/>
+        </collectionViewCell>
+    </objects>
+</document>

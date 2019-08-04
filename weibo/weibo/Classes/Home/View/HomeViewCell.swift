@@ -158,7 +158,7 @@ extension HomeViewCell {
         
         //2.四张配图
         if count == 4 {
-            let picViewWH = imageWH * 2 + itemMargin
+            let picViewWH = imageWH * 2 + itemMargin + 1
             return CGSize(width: picViewWH, height: picViewWH)
         }
         //3.其他配图

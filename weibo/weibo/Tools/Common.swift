@@ -13,6 +13,8 @@ let app_key = "774801925"
 let app_secret = "bc125c4351e673cd8849b5d440f46f2a"
 let redirect_uri = "http://www.baidu.com"
 
-
+//MARK: - 选择照片的通知常量
+let picPickerAddPhotoNote = "picPickerAddPhotoNote"
+let picPickerDeletePhotoNote = "picPickerDeletePhotoNote"
 
 

@@ -11,7 +11,7 @@ import SnapKit
 
 class ReleaseTextView: UITextView {
     //MARK: -懒加载属性
-    private lazy var placeHolderLabel: UILabel = UILabel()
+    lazy var placeHolderLabel: UILabel = UILabel()
     
     
     //MARK: -构造函数
@@ -21,6 +21,7 @@ class ReleaseTextView: UITextView {
         super.init(coder: aDecoder)
         configurUI()
     }
+    
     
 }
 
@@ -42,3 +43,6 @@ extension ReleaseTextView {
         textContainerInset = UIEdgeInsets(top: 8, left: 8, bottom: 6, right: 8)
     }
 }
+
+
+
