@@ -44,6 +44,14 @@
 		D2EE1CC422E74EE100138893 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2EE1CC222E74EE100138893 /* PopoverViewController.xib */; };
 		D2EE1CC622E7565900138893 /* WZPresntationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EE1CC522E7565900138893 /* WZPresntationController.swift */; };
 		D2EE1CC822E76FF500138893 /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EE1CC722E76FF500138893 /* PopoverAnimator.swift */; };
+		D2F1DBFE22F82BB000B8915A /* EmoticonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F1DBF522F82BB000B8915A /* EmoticonViewController.swift */; };
+		D2F1DBFF22F82BB000B8915A /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D2F1DBF622F82BB000B8915A /* Emoticons.bundle */; };
+		D2F1DC0022F82BB000B8915A /* EmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F1DBF722F82BB000B8915A /* EmoticonAttachment.swift */; };
+		D2F1DC0122F82BB000B8915A /* UITextView-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F1DBF822F82BB000B8915A /* UITextView-Extension.swift */; };
+		D2F1DC0222F82BB000B8915A /* EmoticonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F1DBF922F82BB000B8915A /* EmoticonViewCell.swift */; };
+		D2F1DC0322F82BB000B8915A /* Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F1DBFB22F82BB000B8915A /* Emoticon.swift */; };
+		D2F1DC0422F82BB000B8915A /* EmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F1DBFC22F82BB000B8915A /* EmoticonPackage.swift */; };
+		D2F1DC0522F82BB000B8915A /* EmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F1DBFD22F82BB000B8915A /* EmoticonManager.swift */; };
 		D2F6032722F3EAB400AE8ADB /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6032622F3EAB400AE8ADB /* Status.swift */; };
 		D2F6032B22F4250200AE8ADB /* Date-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6032A22F4250200AE8ADB /* Date-Extension.swift */; };
 		D2F6032D22F427C800AE8ADB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F6032C22F427C800AE8ADB /* User.swift */; };
@@ -97,6 +105,14 @@
 		D2EE1CC222E74EE100138893 /* PopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		D2EE1CC522E7565900138893 /* WZPresntationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WZPresntationController.swift; sourceTree = "<group>"; };
 		D2EE1CC722E76FF500138893 /* PopoverAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
+		D2F1DBF522F82BB000B8915A /* EmoticonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewController.swift; sourceTree = "<group>"; };
+		D2F1DBF622F82BB000B8915A /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		D2F1DBF722F82BB000B8915A /* EmoticonAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonAttachment.swift; sourceTree = "<group>"; };
+		D2F1DBF822F82BB000B8915A /* UITextView-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView-Extension.swift"; sourceTree = "<group>"; };
+		D2F1DBF922F82BB000B8915A /* EmoticonViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonViewCell.swift; sourceTree = "<group>"; };
+		D2F1DBFB22F82BB000B8915A /* Emoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emoticon.swift; sourceTree = "<group>"; };
+		D2F1DBFC22F82BB000B8915A /* EmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonPackage.swift; sourceTree = "<group>"; };
+		D2F1DBFD22F82BB000B8915A /* EmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmoticonManager.swift; sourceTree = "<group>"; };
 		D2F6032622F3EAB400AE8ADB /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		D2F6032A22F4250200AE8ADB /* Date-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date-Extension.swift"; sourceTree = "<group>"; };
 		D2F6032C22F427C800AE8ADB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -142,6 +158,7 @@
 		D20C860A22F5DEFE0038A7A2 /* Release */ = {
 			isa = PBXGroup;
 			children = (
+				D2F1DBF422F82BB000B8915A /* Emoticon */,
 				D2DB4CD322F6C51500FA0EB7 /* PicPicker */,
 				D20C860B22F5DF410038A7A2 /* ReleaseViewController.swift */,
 				D20C860C22F5DF410038A7A2 /* ReleaseViewController.xib */,
@@ -446,6 +463,29 @@
 			path = UIPropover;
 			sourceTree = "<group>";
 		};
+		D2F1DBF422F82BB000B8915A /* Emoticon */ = {
+			isa = PBXGroup;
+			children = (
+				D2F1DBF522F82BB000B8915A /* EmoticonViewController.swift */,
+				D2F1DBF622F82BB000B8915A /* Emoticons.bundle */,
+				D2F1DBF722F82BB000B8915A /* EmoticonAttachment.swift */,
+				D2F1DBF822F82BB000B8915A /* UITextView-Extension.swift */,
+				D2F1DBF922F82BB000B8915A /* EmoticonViewCell.swift */,
+				D2F1DBFA22F82BB000B8915A /* Model */,
+			);
+			path = Emoticon;
+			sourceTree = "<group>";
+		};
+		D2F1DBFA22F82BB000B8915A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D2F1DBFB22F82BB000B8915A /* Emoticon.swift */,
+				D2F1DBFC22F82BB000B8915A /* EmoticonPackage.swift */,
+				D2F1DBFD22F82BB000B8915A /* EmoticonManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D2F6032522F3EA7800AE8ADB /* HomeModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,6 +585,7 @@
 				D2CD849522E49A19009783E5 /* main.json in Resources */,
 				D2EE1CC422E74EE100138893 /* PopoverViewController.xib in Resources */,
 				D2CD84A722E4B1EA009783E5 /* Message.storyboard in Resources */,
+				D2F1DBFF22F82BB000B8915A /* Emoticons.bundle in Resources */,
 				D2CD84AF22E4B22A009783E5 /* Profile.storyboard in Resources */,
 				D20C860E22F5DF410038A7A2 /* ReleaseViewController.xib in Resources */,
 				D2CD845822E45500009783E5 /* Main.storyboard in Resources */,
@@ -621,9 +662,14 @@
 				D2F6032722F3EAB400AE8ADB /* Status.swift in Sources */,
 				D2DB4CD522F6C55200FA0EB7 /* PicPickerCollectionView.swift in Sources */,
 				D2E72EF122E70E9C0062C7BD /* UIBarButtonItem-Extension.swift in Sources */,
+				D2F1DC0422F82BB000B8915A /* EmoticonPackage.swift in Sources */,
+				D2F1DC0122F82BB000B8915A /* UITextView-Extension.swift in Sources */,
 				D2F7B0FB22ED8E6E00B7D1CB /* UserAccount.swift in Sources */,
+				D2F1DC0222F82BB000B8915A /* EmoticonViewCell.swift in Sources */,
+				D2F1DC0522F82BB000B8915A /* EmoticonManager.swift in Sources */,
 				D20C861222F5EE4C0038A7A2 /* ReleaseTextView.swift in Sources */,
 				D2CD849122E4995F009783E5 /* ProfileTableViewController.swift in Sources */,
+				D2F1DC0022F82BB000B8915A /* EmoticonAttachment.swift in Sources */,
 				D2F7B0F222ED660700B7D1CB /* NetworkTools.swift in Sources */,
 				D201F19622F2D6AF00A6FCE0 /* UserAccountViewModel.swift in Sources */,
 				D2EE1CC622E7565900138893 /* WZPresntationController.swift in Sources */,
@@ -636,6 +682,7 @@
 				D2CD848B22E4992F009783E5 /* HomeTableViewController.swift in Sources */,
 				D2F6032B22F4250200AE8ADB /* Date-Extension.swift in Sources */,
 				D2F6032F22F4322C00AE8ADB /* StatusViewModel.swift in Sources */,
+				D2F1DBFE22F82BB000B8915A /* EmoticonViewController.swift in Sources */,
 				D2F6033122F4410200AE8ADB /* HomeViewCell.swift in Sources */,
 				D20C861022F5E3CC0038A7A2 /* ReleaseTitleView.swift in Sources */,
 				D2EE1CC822E76FF500138893 /* PopoverAnimator.swift in Sources */,
@@ -643,6 +690,7 @@
 				D2CD848D22E49943009783E5 /* MessageTableViewController.swift in Sources */,
 				D2DB4CD822F6CB2700FA0EB7 /* PicPickerCollectionViewCell.swift in Sources */,
 				D2E72EED22E6F05D0062C7BD /* VisitorView.swift in Sources */,
+				D2F1DC0322F82BB000B8915A /* Emoticon.swift in Sources */,
 				D20C860922F543100038A7A2 /* PicViewCollectionView.swift in Sources */,
 				D2CD848F22E49951009783E5 /* DiscoverTableViewController.swift in Sources */,
 				D2CD848922E49912009783E5 /* MainViewController.swift in Sources */,

@@ -28,7 +28,7 @@ class PicPickerCollectionView: UICollectionView {
         layout.itemSize = CGSize(width: itemWH, height: itemWH)
         //设置collectionview的内边距
         contentInset = UIEdgeInsets(top: margin, left: margin, bottom: 0, right: margin)
-        
+        //从xib中加载item
         register(UINib(nibName: "PicPickerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: picPickerCell)
         dataSource = self
     }

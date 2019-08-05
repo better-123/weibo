@@ -159,9 +159,9 @@ extension QAuthViewController {
 //            print(userAccount)
             //3.4保存账号信息(归档/解档),如果要保存一个对象,这个对象对应的这个模型必须遵守NSCoding协议
             //3.4.1获取沙盒路径
-//            var accountPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-//            accountPath = accountPath + "/account.plist"
-//            print(accountPath)
+            var accountPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+            accountPath = accountPath + "/account.plist"
+            print(accountPath)
             //3.4.2保存对象
             NSKeyedArchiver.archiveRootObject(userAccount, toFile: UserAccountViewModel.shareInstance.accountPath)
             

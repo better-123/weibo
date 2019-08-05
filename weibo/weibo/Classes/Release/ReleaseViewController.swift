@@ -11,10 +11,19 @@ import UIKit
 class ReleaseViewController: UIViewController {
     
     //MARK: - 懒加载属性
+    ///navTitleView
     private lazy var titleView: ReleaseTitleView = ReleaseTitleView()
+    ///选择照片后存储的数组
     private lazy var images: [UIImage] = [UIImage]()
+    ///表情键盘
+    private lazy var emoticonVc: EmoticonViewController = EmoticonViewController {[weak self] (enmotic:Emoticon) in
+        self?.releaseTextView.insertEmoticonIntoTextView(emoticon: enmotic)
+        //当最先插入表情时他不会触发这个方法(监听textview是否有值),所以最开始直接插入表情是我们手动调用一下这个方法就可以执行触发这个方法所做的事情了
+        self?.textViewDidChange(self!.releaseTextView)
+    }
     
     //MARK: - 控件属性
+    ///发布textView
     @IBOutlet weak var releaseTextView: ReleaseTextView!
     ///toolbar
     @IBOutlet weak var toolBar: UIToolbar!
@@ -87,6 +96,7 @@ extension ReleaseViewController {
     }
     @objc private func sendItemClick() {
         print("发送")
+        var sendStr = releaseTextView.getEmoticonString()
     }
     //通知方法
     @objc private func keyboardWillChangeFrame(note:Notification) {
@@ -122,7 +132,7 @@ extension ReleaseViewController {
         //1.退出键盘
         releaseTextView.resignFirstResponder()
         //2.切换键盘
-        releaseTextView.inputView = releaseTextView.inputView != nil ? nil : UISwitch()
+        releaseTextView.inputView = releaseTextView.inputView != nil ? nil : emoticonVc.view
         //3.设置新的键盘为第一响应者
         releaseTextView.becomeFirstResponder()
     }
