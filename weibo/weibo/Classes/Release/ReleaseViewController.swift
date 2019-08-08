@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ReleaseViewController: UIViewController {
     
@@ -92,11 +93,35 @@ extension ReleaseViewController {
 extension ReleaseViewController {
     @objc private func returnItemClick() {
         print("返回")
+        //退出键盘
+        releaseTextView.resignFirstResponder()
+        //退出控制器
         dismiss(animated: true, completion: nil)
     }
+    //MARK: -发送微博
     @objc private func sendItemClick() {
         print("发送")
-        var sendStr = releaseTextView.getEmoticonString()
+        //退出键盘
+        releaseTextView.resignFirstResponder()
+        //定义成功回调闭包
+        let successCallBack:(_ isSuccess:Bool)->() = { (isSuccess:Bool) in
+            if isSuccess {
+                SVProgressHUD.showSuccess(withStatus: "发送成功")
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                SVProgressHUD.showError(withStatus: "发送失败")
+                return
+            }
+        }
+        //发送微博
+        let sendStr = releaseTextView.getEmoticonString()
+        //1.获取用户选中的图片
+        if let image = images.first {
+            NetworkTools.shareInstance.sendStatusAndPicture(statusText: sendStr, image: image, isSuccess: successCallBack)
+        } else {
+        //2.或着发送文字
+            NetworkTools.shareInstance.sendStatus(statusText: sendStr, isSuccess: successCallBack)
+        }
     }
     //通知方法
     @objc private func keyboardWillChangeFrame(note:Notification) {

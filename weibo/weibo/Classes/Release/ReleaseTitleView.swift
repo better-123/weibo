@@ -35,19 +35,30 @@ extension ReleaseTitleView {
         addSubview(titleLabel)
         addSubview(subTitleLabel)
         //2.设置控件的frame
-        titleLabel.snp_makeConstraints { (make:ConstraintMaker) in
-//            make.centerX.equalTo(self)
+        titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self)
             make.left.equalTo(self)
             make.right.equalTo(self)
         }
-        subTitleLabel.snp_makeConstraints { (make:ConstraintMaker) in
-//            make.centerX.equalTo(titleLabel.snp_centerX)
-            make.top.equalTo(titleLabel.snp_bottom).offset(3)
+//        titleLabel.snp_makeConstraints { (make:ConstraintMaker) in
+////            make.centerX.equalTo(self)
+//            make.top.equalTo(self)
+//            make.left.equalTo(self)
+//            make.right.equalTo(self)
+//        }
+        subTitleLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(titleLabel.snp.bottom).offset(3)
             make.bottom.equalTo(self)
             make.left.equalTo(self)
             make.right.equalTo(self)
         }
+//        subTitleLabel.snp_makeConstraints { (make:ConstraintMaker) in
+////            make.centerX.equalTo(titleLabel.snp_centerX)
+//            make.top.equalTo(titleLabel.snp_bottom).offset(3)
+//            make.bottom.equalTo(self)
+//            make.left.equalTo(self)
+//            make.right.equalTo(self)
+//        }
         //设置控件属性
         titleLabel.font = UIFont.systemFont(ofSize: 16)
         titleLabel.textAlignment = .center

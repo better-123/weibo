@@ -17,4 +17,8 @@ let redirect_uri = "http://www.baidu.com"
 let picPickerAddPhotoNote = "picPickerAddPhotoNote"
 let picPickerDeletePhotoNote = "picPickerDeletePhotoNote"
 
+//MARK: - 照片浏览器的通知常量
+let showPhoneBrowserNote = "showPhoneBrowserNote"
+
+
 

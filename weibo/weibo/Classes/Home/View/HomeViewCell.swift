@@ -72,8 +72,9 @@ class HomeViewCell: UITableViewCell {
             //设置微博来源
             sourceLable.text = viewModel.sourceText
             //设置正文
+//            let statusText = viewModel.status?.text
+//            contentLable.attributedText = FindEmoticon.shareInstance.findAttributedString(statusText: statusText, font: contentLable.font)
             contentLable.text = viewModel.status?.text
-            
             
             //9.计算picView的宽度和高度约束
             let picViewSize = calculatePicViewSize(count: viewModel.picUrls.count)
@@ -88,6 +89,9 @@ class HomeViewCell: UITableViewCell {
                 if let retweetedScreenName = viewModel.status?.retweeted_status?.user?.screen_name,let retweetedText = viewModel.status?.retweeted_status?.text {
                     //设置转发微博正文距离顶部微博正文的距离
                     retweetedLableTop.constant = 15
+                    ///转发正文内容
+//                    let retweetedText = "@" + "\(retweetedScreenName): " + retweetedText
+//                    retweetedContentLable.attributedText = FindEmoticon.shareInstance.findAttributedString(statusText: retweetedText, font: retweetedContentLable.font)
                     retweetedContentLable.text = "@" + "\(retweetedScreenName): " + retweetedText
                 }
                 //设置转发背景显示
@@ -113,10 +117,13 @@ class HomeViewCell: UITableViewCell {
         contentLableWidth.constant = UIScreen.main.bounds.width - 2*edgeMargin
         
         //取出picView对应的laout(items布局方式)
-        let layOut = PicViewCollection.collectionViewLayout as! UICollectionViewFlowLayout
-        let imageWH = (UIScreen.main.bounds.width - 2*edgeMargin - 2*itemMargin)/3
-        //一张图片时设置itemsize
-        layOut.itemSize = CGSize(width: imageWH, height: imageWH)
+        //方式一:(不管图片只有一种的情况)
+//        let layOut = PicViewCollection.collectionViewLayout as! UICollectionViewFlowLayout
+//        let imageWH = (UIScreen.main.bounds.width - 2*edgeMargin - 2*itemMargin)/3
+//        //一张图片时设置itemsize
+//        layOut.itemSize = CGSize(width: imageWH, height: imageWH)
+        //方式二:(添加图片只有一种的情况)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -134,27 +141,29 @@ extension HomeViewCell {
             //没有配图设置返回icon的size为0
             return CGSize.zero
         }
+        //方式二:(添加图片只有一种的情况)
         //取出picView对应的layout
-//        let layOut = PicViewCollection.collectionViewLayout as! UICollectionViewFlowLayout
+        let layOut = PicViewCollection.collectionViewLayout as! UICollectionViewFlowLayout
         
 //        //2.一张配图
-//        if count == 1 {
-//            //取出图片
-//            let urlString = viewModel?.picUrls.first?.absoluteString
-//
+        if count == 1 {
+            //取出图片
+            let urlString = viewModel?.picUrls.first?.absoluteString
+            let image = SDWebImageManager.shared().imageCache?.imageFromMemoryCache(forKey: urlString)
 //            let image = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: urlString)
-//            //一张图片时设置itemsize
-//            layOut.itemSize = CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
-//            //直接返回图片的size，系统回默认将图片大小压缩一倍,所以下面设置图片宽高各乘2倍
-//            return CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
-//        }
+            //一张图片时设置itemsize
+            layOut.itemSize = CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
+            //直接返回图片的size，系统回默认将图片大小压缩一倍,所以下面设置图片宽高各乘2倍
+            return CGSize(width: (image?.size.width)! * 2, height: (image?.size.height)! * 2)
+        }
         //有配图设置collection距离底部距离为10
         pickViewcollectionBottom.constant = 10
         
         //每张微博配图的宽高
         let imageWH = (UIScreen.main.bounds.width - 2*edgeMargin - 2*itemMargin)/3
-//        //一张图片时设置itemsize
-//        layOut.itemSize = CGSize(width: imageWH, height: imageWH)
+        //方式二:(添加图片只有一种的情况)
+        //一张图片时设置itemsize
+        layOut.itemSize = CGSize(width: imageWH, height: imageWH)
         
         //2.四张配图
         if count == 4 {

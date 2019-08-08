@@ -31,10 +31,14 @@ extension ReleaseTextView {
         //1.添加子控件
         addSubview(placeHolderLabel)
         //2.设置labelframe
-        placeHolderLabel.snp_makeConstraints { (make:ConstraintMaker) in
+        placeHolderLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self).offset(8)
             make.left.equalTo(self).offset(10)
         }
+//        placeHolderLabel.snp_makeConstraints { (make:ConstraintMaker) in
+//            make.top.equalTo(self).offset(8)
+//            make.left.equalTo(self).offset(10)
+//        }
         //3.设置label属性
         placeHolderLabel.textColor = UIColor.lightGray
         placeHolderLabel.text = "分享新鲜事..."

@@ -30,6 +30,11 @@ extension UIButton {
         setImage(UIImage(named: imageName + "-2"), for: .highlighted)
         sizeToFit()
     }
-    
+    convenience init(title:String,bgColor:UIColor,fontSize:CGFloat){
+        self.init()
+        setTitle(title, for: .normal)
+        backgroundColor = bgColor
+        titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+    }
     
 }

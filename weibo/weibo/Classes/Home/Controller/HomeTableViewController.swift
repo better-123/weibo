@@ -20,11 +20,13 @@ class HomeTableViewController: BaseTableViewController {
     private lazy var popoverAnimator : PopoverAnimator = PopoverAnimator {[weak self] (Bool) in
         self?.navTitleBtn.isSelected = Bool
     }
+    
     ///微博数据数组
     private lazy var viewModels: [StatusViewModel] = [StatusViewModel]()
     ///提示label
     private lazy var tipLabel: UILabel = UILabel()
-    
+    ///照片弹出控制器动画
+    private lazy var photoBrowserAnimator: PhotoBrowserAnimator = PhotoBrowserAnimator()
     //MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +52,9 @@ class HomeTableViewController: BaseTableViewController {
         configurFooterView()
         //6.布局提示label
         configurTipLabel()
+        
+        ///7.监听通知
+        configurNatifications()
     }
 }
 
@@ -102,7 +107,13 @@ extension HomeTableViewController {
         tipLabel.textAlignment = .center
         tipLabel.isHidden = true
     }
+    ///监听通知方法
+    private func configurNatifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(showPhotoBrowser(note:)), name: NSNotification.Name(rawValue: showPhoneBrowserNote), object: nil)
+    }
+    
 }
+
 //MARK: - 事件监听函数
 extension HomeTableViewController {
     @objc private func navTitleBtnClick(titleBtn:TitleButton) {
@@ -123,6 +134,27 @@ extension HomeTableViewController {
         
         //4>改变按钮状态(使用代理更好,通知(多层传递使用通知),闭包)
         //采用的闭包形式,在创建popoverAnimator对象时,赋值修改按钮的状态
+    }
+    @objc private func showPhotoBrowser(note:Notification) {
+        //0.取出数据,传递给图片浏览控制器
+        let indexPath = note.userInfo!["indexPath"] as! IndexPath
+        let picUrls = note.userInfo!["picUrls"] as! [URL]
+        //这个对象就是PicViewCollectionView类型对象
+        let object = note.object as! AnimatorPresentedDelegate
+        
+        //1.创建图片浏览控制器
+        let photoBrowserVc = PhotoBrowserViewController(indexPath: indexPath, picUrls: picUrls)
+        
+        //2.设置modal样式
+        photoBrowserVc.modalPresentationStyle = .custom
+        //3.设置转场代理
+        photoBrowserVc.transitioningDelegate = photoBrowserAnimator
+        //4.设置动画代理
+        photoBrowserAnimator.delegate = object
+        photoBrowserAnimator.indexPath = indexPath
+        photoBrowserAnimator.dismissDelegate = photoBrowserVc
+        //modal出图片浏览器控制器
+        present(photoBrowserVc, animated: true, completion: nil)
     }
 }
 //MARK: - 请求数据
@@ -177,14 +209,14 @@ extension HomeTableViewController {
             }
             
             //4.缓存图片(为显示微博单张配图)
-            //            self.cacheImages(viewModels: self.viewModels)
+            self.cacheImages(viewModels: self.viewModels)
             //5.刷新表格
-            self.tableView.reloadData()
+//            self.tableView.reloadData()
             //显示提示label
-            self.showTipLable(count: tempViewModel.count)
-            //6.结束刷新
-            self.tableView.mj_header.endRefreshing()
-            self.tableView.mj_footer.endRefreshing()
+//            self.showTipLable(count: tempViewModel.count)
+//            //6.结束刷新
+//            self.tableView.mj_header.endRefreshing()
+//            self.tableView.mj_footer.endRefreshing()
         }
     }
     
@@ -205,27 +237,33 @@ extension HomeTableViewController {
         }
     }
     
-//    private func cacheImages(viewModels:[StatusViewModel]) {
-//        //1.创建组
-//        let group = DispatchGroup()
-//        //2.缓存图片
-//        for viewModel in viewModels {
-//            for picUrl in viewModel.picUrls {
-//                group.enter()
-//                SDWebImageManager.shared().imageDownloader?.downloadImage(with: picUrl, options: [], progress: nil, completed: { (image, _, _, _) in
-////                    print("下载一张图片")
-////                    print(image)
-//                    group.leave()
-//                })
-//            }
-//        }
-//        //刷新表格
-//        group.notify(queue: .main) {
-//            self.tableView.reloadData()
+    private func cacheImages(viewModels:[StatusViewModel]) {
+        //1.创建组
+        let group = DispatchGroup()
+        //2.缓存图片
+        for viewModel in viewModels {
+            for picUrl in viewModel.picUrls {
+                group.enter()
+                SDWebImageManager.shared().imageDownloader?.downloadImage(with: picUrl, options: [], progress: nil, completed: { (image, _, _, _) in
+//                    print("下载一张图片")
+//                    print(image!)
+                    SDWebImageManager.shared().saveImage(toCache: image, for: picUrl)
+                    group.leave()
+                })
+            }
+        }
+        //刷新表格
+        group.notify(queue: .main) {
+            self.tableView.reloadData()
 //            print("刷新表格")
-//        }
-//
-//    }
+            //显示提示label
+            self.showTipLable(count: viewModels.count)
+            //6.结束刷新
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
+        }
+
+    }
 }
 
 //MARK:- tableView数据源方法
